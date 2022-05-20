@@ -1,3 +1,4 @@
+using HamsterApp.API.Data;
 using HamsterApp.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
