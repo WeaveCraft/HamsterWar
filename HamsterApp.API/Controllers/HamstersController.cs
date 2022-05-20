@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HamsterApp.API.Data;
 using HamsterApp.Entities.Models;
-using HamsterApp.Entities.DTO;
 using AutoMapper;
+using HamsterApp.API.Static;
+using HamsterApp.Entities.DTO.Hamster;
 
 namespace HamsterApp.API.Controllers
 {
@@ -18,32 +14,50 @@ namespace HamsterApp.API.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
+        private readonly ILogger<HamstersController> _logger;
 
-        public HamstersController(ApplicationDbContext context, IMapper mapper)
+        public HamstersController(ApplicationDbContext context, IMapper mapper, ILogger<HamstersController> logger)
         {
             _context = context;
             _mapper = mapper;
+            _logger = logger;
         }
 
         // GET: api/Hamsters
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Hamster>>> GetHamsters()
+        public async Task<ActionResult<IEnumerable<HamsterReadOnlyDto>>> GetHamsters()
         {
-          if (_context.Hamsters == null)
-          {
-              return NotFound();
-          }
-            return await _context.Hamsters.ToListAsync();
+            var hamsters = _mapper.Map<IEnumerable<HamsterReadOnlyDto>>(await _context.Hamsters.ToListAsync());
+            return Ok(hamsters);
         }
 
         // GET: api/Hamsters/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Hamster>> GetHamster(int id)
+        public async Task<ActionResult<HamsterReadOnlyDto>> GetHamster(int id)
         {
-          if (_context.Hamsters == null)
+
+            var hamster = await _context.Hamsters.FindAsync(id);
+
+          if (hamster == null)
           {
               return NotFound();
           }
+
+            var hamsterDto = _mapper.Map<HamsterReadOnlyDto>(hamster);
+            return Ok(hamsterDto);
+
+        }
+
+        // PUT: api/Hamsters/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutHamster(int id, HamsterUpdateDto hamsterDto)
+        {
+            if (id != hamsterDto.Id)
+            {
+                return BadRequest();
+            }
+
             var hamster = await _context.Hamsters.FindAsync(id);
 
             if (hamster == null)
@@ -51,19 +65,7 @@ namespace HamsterApp.API.Controllers
                 return NotFound();
             }
 
-            return hamster;
-        }
-
-        // PUT: api/Hamsters/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutHamster(int id, Hamster hamster)
-        {
-            if (id != hamster.Id)
-            {
-                return BadRequest();
-            }
-
+            _mapper.Map(hamsterDto, hamster);
             _context.Entry(hamster).State = EntityState.Modified;
 
             try
@@ -90,12 +92,17 @@ namespace HamsterApp.API.Controllers
         [HttpPost]
         public async Task<ActionResult<HamsterCreateDto>> PostHamster(HamsterCreateDto hamsterDto)
         {
-            var hamster = _mapper.Map<Hamster>(hamsterDto);
-            await _context.Hamsters.AddAsync(hamster);
-            await _context.SaveChangesAsync();
+                var hamster = _mapper.Map<Hamster>(hamsterDto);
+                await _context.Hamsters.AddAsync(hamster);
+                await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetHamster), new { id = hamster.Id }, hamster);
+                return CreatedAtAction(nameof(GetHamster), new { id = hamster.Id }, hamster);
+            //catch (Exception ex)
+            //{
+            //    _logger.LogError(ex, $"Error Performing POST in {nameof(PostHamster)}", hamsterDto);
 
+            //    return StatusCode(500, Messages.Error500Message);
+            //}
         }
 
         // DELETE: api/Hamsters/5

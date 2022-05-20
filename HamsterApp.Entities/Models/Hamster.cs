@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HamsterApp.Entities.Models
 {
     public class Hamster
     {
-        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string? Name { get; set; }
         public int? Age { get; set; }
@@ -14,6 +15,7 @@ namespace HamsterApp.Entities.Models
         public int? Wins { get; set; } = 0;
         public int? Losses { get; set; } = 0;
         public int? Games { get; set; } = 0;
+
 
     }
 }

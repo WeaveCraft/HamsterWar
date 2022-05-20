@@ -25,49 +25,51 @@ namespace HamsterApp.DataAccess.Migrations
             modelBuilder.Entity("HamsterApp.Entities.Models.Game", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.HasKey("Id");
 
-                    b.ToTable("Games", (string)null);
+                    b.ToTable("Games");
                 });
 
             modelBuilder.Entity("HamsterApp.Entities.Models.Hamster", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int?>("Age")
                         .HasColumnType("int");
 
                     b.Property<string>("FavFood")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Games")
                         .HasColumnType("int");
 
                     b.Property<string>("ImgName")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Losses")
                         .HasColumnType("int");
 
                     b.Property<string>("Loves")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Wins")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Hamsters", (string)null);
+                    b.ToTable("Hamsters");
                 });
 
             modelBuilder.Entity("HamsterApp.Entities.Models.Match", b =>
@@ -93,7 +95,7 @@ namespace HamsterApp.DataAccess.Migrations
 
                     b.HasIndex("HamsterId");
 
-                    b.ToTable("Matches", (string)null);
+                    b.ToTable("Matches");
                 });
 
             modelBuilder.Entity("HamsterApp.Entities.Models.Match", b =>

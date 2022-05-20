@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HamsterApp.Entities.DTO
+namespace HamsterApp.Entities.DTO.Hamster
 {
     public class HamsterCreateDto
     {

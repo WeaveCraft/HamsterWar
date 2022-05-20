@@ -4,7 +4,7 @@
 
 namespace HamsterApp.DataAccess.Migrations
 {
-    public partial class FirstMigration : Migration
+    public partial class FirstMigrationToDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,6 +13,7 @@ namespace HamsterApp.DataAccess.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1")
                 },
                 constraints: table =>
                 {
@@ -23,12 +24,13 @@ namespace HamsterApp.DataAccess.Migrations
                 name: "Hamsters",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Age = table.Column<int>(type: "int", nullable: true),
-                    FavFood = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    Loves = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    ImgName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    FavFood = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Loves = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImgName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Wins = table.Column<int>(type: "int", nullable: true),
                     Losses = table.Column<int>(type: "int", nullable: true),
                     Games = table.Column<int>(type: "int", nullable: true)

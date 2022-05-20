@@ -13,7 +13,7 @@ namespace HamsterApp.Entities.Models
         public int GameId { get; set; }
         public string? WinStatus { get; set; }
 
-        public virtual Game Game { get; set; } = null!;
-        public virtual Hamster Hamster { get; set; } = null!;
+        public virtual Game Game { get; set; } 
+        public virtual Hamster Hamster { get; set; }
     }
 }
