@@ -27,25 +27,40 @@ namespace HamsterApp.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<HamsterReadOnlyDto>>> GetHamsters()
         {
-            var hamsters = _mapper.Map<IEnumerable<HamsterReadOnlyDto>>(await _context.Hamsters.ToListAsync());
-            return Ok(hamsters);
+            try
+            {
+                var hamsters = _mapper.Map<IEnumerable<HamsterReadOnlyDto>>(await _context.Hamsters.ToListAsync());
+                return Ok(hamsters);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error performing GET in {nameof(GetHamsters)}");
+                return StatusCode(500, Messages.Error500Message);
+            }
         }
 
         // GET: api/Hamsters/5
         [HttpGet("{id}")]
         public async Task<ActionResult<HamsterReadOnlyDto>> GetHamster(int id)
         {
+            try
+            {
+                var hamster = await _context.Hamsters.FindAsync(id);
 
-            var hamster = await _context.Hamsters.FindAsync(id);
+                if (hamster == null)
+                {
+                    _logger.LogWarning($"Record {nameof(GetHamster)} was not found.\nId: {id}");
+                    return NotFound();
+                }
 
-          if (hamster == null)
-          {
-              return NotFound();
-          }
-
-            var hamsterDto = _mapper.Map<HamsterReadOnlyDto>(hamster);
-            return Ok(hamsterDto);
-
+                var hamsterDto = _mapper.Map<HamsterReadOnlyDto>(hamster);
+                return Ok(hamsterDto);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error performing GET in {nameof(GetHamsters)}");
+                return StatusCode(500, Messages.Error500Message);
+            }
         }
 
         // PUT: api/Hamsters/5
@@ -55,6 +70,7 @@ namespace HamsterApp.API.Controllers
         {
             if (id != hamsterDto.Id)
             {
+                _logger.LogWarning($"Update Id invalid in {nameof(GetHamsters)} with Id {id}");
                 return BadRequest();
             }
 
@@ -62,6 +78,7 @@ namespace HamsterApp.API.Controllers
 
             if (hamster == null)
             {
+                _logger.LogWarning($"Record {nameof(GetHamsters)} was not found with Id {id}");
                 return NotFound();
             }
 
@@ -72,7 +89,7 @@ namespace HamsterApp.API.Controllers
             {
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
                 if (!HamsterExists(id))
                 {
@@ -80,7 +97,8 @@ namespace HamsterApp.API.Controllers
                 }
                 else
                 {
-                    throw;
+                    _logger.LogError(ex, $"Error performing GET in {nameof(PutHamster)}");
+                    return StatusCode(500, Messages.Error500Message);
                 }
             }
 
@@ -92,37 +110,48 @@ namespace HamsterApp.API.Controllers
         [HttpPost]
         public async Task<ActionResult<HamsterCreateDto>> PostHamster(HamsterCreateDto hamsterDto)
         {
+            try
+            {
                 var hamster = _mapper.Map<Hamster>(hamsterDto);
                 await _context.Hamsters.AddAsync(hamster);
                 await _context.SaveChangesAsync();
 
                 return CreatedAtAction(nameof(GetHamster), new { id = hamster.Id }, hamster);
-            //catch (Exception ex)
-            //{
-            //    _logger.LogError(ex, $"Error Performing POST in {nameof(PostHamster)}", hamsterDto);
-
-            //    return StatusCode(500, Messages.Error500Message);
-            //}
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error Performing POST in {nameof(PostHamster)}", hamsterDto);
+                return StatusCode(500, Messages.Error500Message);
+            }
         }
 
         // DELETE: api/Hamsters/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHamster(int id)
         {
-            if (_context.Hamsters == null)
+            try
             {
-                return NotFound();
+                if (_context.Hamsters == null)
+                {
+                    _logger.LogWarning($"{nameof(Hamster)} record was not found in {nameof(DeleteHamster)} with Id: {id}");
+                    return NotFound();
+                }
+                var hamster = await _context.Hamsters.FindAsync(id);
+                if (hamster == null)
+                {
+                    return NotFound();
+                }
+
+                _context.Hamsters.Remove(hamster);
+                await _context.SaveChangesAsync();
+
+                return NoContent();
             }
-            var hamster = await _context.Hamsters.FindAsync(id);
-            if (hamster == null)
+            catch (Exception ex)
             {
-                return NotFound();
+                _logger.LogError(ex, $"Error performing DELETE in {nameof(DeleteHamster)}");
+                return StatusCode(500, Messages.Error500Message);
             }
-
-            _context.Hamsters.Remove(hamster);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
         }
 
         private bool HamsterExists(int id)
