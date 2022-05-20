@@ -4,11 +4,6 @@ namespace HamsterApp.Entities.Models
 {
     public class Hamster
     {
-        public Hamster()
-        {
-            Matches = new HashSet<Match>();
-        }
-
         public int Id { get; set; }
         public string? Name { get; set; }
         public int? Age { get; set; }
@@ -19,6 +14,5 @@ namespace HamsterApp.Entities.Models
         public int? Losses { get; set; }
         public int? Games { get; set; }
 
-        public virtual ICollection<Match> Matches { get; set; }
     }
 }

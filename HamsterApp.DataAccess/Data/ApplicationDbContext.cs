@@ -46,25 +46,6 @@ namespace HamsterApp.API.Data
                 entity.Property(e => e.Name).HasMaxLength(50);
             });
 
-            modelBuilder.Entity<Match>(entity =>
-            {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
-                entity.Property(e => e.WinStatus).HasMaxLength(50);
-
-                entity.HasOne(d => d.Game)
-                    .WithMany(p => p.Matches)
-                    .HasForeignKey(d => d.GameId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Matches_ToTable_1");
-
-                entity.HasOne(d => d.Hamster)
-                    .WithMany(p => p.Matches)
-                    .HasForeignKey(d => d.HamsterId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Matches_ToTable");
-            });
-
             OnModelCreatingPartial(modelBuilder);
         }
 

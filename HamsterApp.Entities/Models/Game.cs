@@ -8,13 +8,8 @@ namespace HamsterApp.Entities.Models
 {
     public class Game
     {
-        public Game()
-        {
-            Matches = new HashSet<Match>();
-        }
 
         public int Id { get; set; }
 
-        public virtual ICollection<Match> Matches { get; set; }
     }
 }
