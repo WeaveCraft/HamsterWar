@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HamsterApp.Entities.Models
+namespace HamsterApp.Entities.DTO.Match
 {
-    public class Match
+    public class MatchDetailDto
     {
-        public int Id { get; set; }
+        [Required]
         public int HamsterId { get; set; }
+        public string HamsterName { get; set; }
         public int WinId { get; set; }
         public int LoseId { get; set; }
-        public virtual Hamster? Hamster { get; set; }
     }
 }

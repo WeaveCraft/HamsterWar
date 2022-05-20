@@ -5,6 +5,11 @@ namespace HamsterApp.Entities.Models
 {
     public class Hamster
     {
+        public Hamster()
+        {
+            Matches = new HashSet<Match>();
+        }
+
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string? Name { get; set; }
@@ -16,6 +21,6 @@ namespace HamsterApp.Entities.Models
         public int? Losses { get; set; } = 0;
         public int? Games { get; set; } = 0;
 
-
+        public virtual ICollection<Match> Matches { get; set; }
     }
 }

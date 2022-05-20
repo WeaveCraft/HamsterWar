@@ -12,7 +12,6 @@ namespace HamsterApp.API.Data
             : base(options)
         {
         }
-        public virtual DbSet<Game> Games { get; set; } = null!;
         public virtual DbSet<Hamster> Hamsters { get; set; } = null!;
         public virtual DbSet<Match> Matches { get; set; } = null!;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

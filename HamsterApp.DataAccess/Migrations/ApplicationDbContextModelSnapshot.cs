@@ -22,19 +22,6 @@ namespace HamsterApp.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("HamsterApp.Entities.Models.Game", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Games");
-                });
-
             modelBuilder.Entity("HamsterApp.Entities.Models.Hamster", b =>
                 {
                     b.Property<int>("Id")
@@ -80,18 +67,16 @@ namespace HamsterApp.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("GameId")
-                        .HasColumnType("int");
-
                     b.Property<int>("HamsterId")
                         .HasColumnType("int");
 
-                    b.Property<string>("WinStatus")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("LoseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WinId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("GameId");
 
                     b.HasIndex("HamsterId");
 
@@ -100,21 +85,18 @@ namespace HamsterApp.DataAccess.Migrations
 
             modelBuilder.Entity("HamsterApp.Entities.Models.Match", b =>
                 {
-                    b.HasOne("HamsterApp.Entities.Models.Game", "Game")
-                        .WithMany()
-                        .HasForeignKey("GameId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("HamsterApp.Entities.Models.Hamster", "Hamster")
-                        .WithMany()
+                        .WithMany("Matches")
                         .HasForeignKey("HamsterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Game");
-
                     b.Navigation("Hamster");
+                });
+
+            modelBuilder.Entity("HamsterApp.Entities.Models.Hamster", b =>
+                {
+                    b.Navigation("Matches");
                 });
 #pragma warning restore 612, 618
         }
