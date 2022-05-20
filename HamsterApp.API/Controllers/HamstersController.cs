@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HamsterApp.API.Data;
 using HamsterApp.Entities.Models;
+using HamsterApp.Entities.DTO;
+using AutoMapper;
 
 namespace HamsterApp.API.Controllers
 {
@@ -15,10 +17,12 @@ namespace HamsterApp.API.Controllers
     public class HamstersController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
 
-        public HamstersController(ApplicationDbContext context)
+        public HamstersController(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Hamsters
@@ -84,30 +88,14 @@ namespace HamsterApp.API.Controllers
         // POST: api/Hamsters
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Hamster>> PostHamster(Hamster hamster)
+        public async Task<ActionResult<HamsterCreateDto>> PostHamster(HamsterCreateDto hamsterDto)
         {
-          if (_context.Hamsters == null)
-          {
-              return Problem("Entity set 'ApplicationDbContext.Hamsters'  is null.");
-          }
-            _context.Hamsters.Add(hamster);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (HamsterExists(hamster.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            var hamster = _mapper.Map<Hamster>(hamsterDto);
+            await _context.Hamsters.AddAsync(hamster);
+            await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetHamster", new { id = hamster.Id }, hamster);
+            return CreatedAtAction(nameof(GetHamster), new { id = hamster.Id }, hamster);
+
         }
 
         // DELETE: api/Hamsters/5

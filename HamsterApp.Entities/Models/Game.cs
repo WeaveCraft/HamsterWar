@@ -8,7 +8,6 @@ namespace HamsterApp.Entities.Models
 {
     public class Game
     {
-
         public int Id { get; set; }
 
     }

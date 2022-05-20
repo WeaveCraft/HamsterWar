@@ -8,16 +8,13 @@ namespace HamsterApp.API.Data
         public ApplicationDbContext()
         {
         }
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
-
         public virtual DbSet<Game> Games { get; set; } = null!;
         public virtual DbSet<Hamster> Hamsters { get; set; } = null!;
         public virtual DbSet<Match> Matches { get; set; } = null!;
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -25,7 +22,6 @@ namespace HamsterApp.API.Data
                 optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=HamsterWarDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             }
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Game>(entity =>

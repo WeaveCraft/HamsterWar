@@ -4,7 +4,7 @@
 
 namespace HamsterApp.DataAccess.Migrations
 {
-    public partial class AddedTablesToDB : Migration
+    public partial class FirstMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,6 @@ namespace HamsterApp.DataAccess.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1")
                 },
                 constraints: table =>
                 {
@@ -24,16 +23,15 @@ namespace HamsterApp.DataAccess.Migrations
                 name: "Hamsters",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Age = table.Column<int>(type: "int", nullable: false),
-                    FavFood = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FavThing = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImgName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Wins = table.Column<int>(type: "int", nullable: false),
-                    Losses = table.Column<int>(type: "int", nullable: false),
-                    Games = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Age = table.Column<int>(type: "int", nullable: true),
+                    FavFood = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Loves = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    ImgName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Wins = table.Column<int>(type: "int", nullable: true),
+                    Losses = table.Column<int>(type: "int", nullable: true),
+                    Games = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -48,7 +46,7 @@ namespace HamsterApp.DataAccess.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     HamsterId = table.Column<int>(type: "int", nullable: false),
                     GameId = table.Column<int>(type: "int", nullable: false),
-                    WinStatus = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    WinStatus = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
