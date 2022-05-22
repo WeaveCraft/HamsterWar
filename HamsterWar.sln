@@ -9,7 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamsterApp.DataAccess", "Ha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamsterApp.Entities", "HamsterApp.Entities\HamsterApp.Entities.csproj", "{16182BFF-C842-494E-83D5-A0AA9C2708AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HamsterApp.Blazor.ServerUi", "HamsterApp.Blazor.ServerUi\HamsterApp.Blazor.ServerUi.csproj", "{DD2F3797-4248-408A-8AF4-1B9B54375CBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamsterApp.Blazor.ServerUi", "HamsterApp.Blazor.ServerUi\HamsterApp.Blazor.ServerUi.csproj", "{DD2F3797-4248-408A-8AF4-1B9B54375CBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{E11DE18E-C223-4599-B473-D846CB6A5FB7}"
+	ProjectSection(SolutionItems) = preProject
+		Sources.txt = Sources.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

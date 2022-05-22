@@ -1,0 +1,1 @@
+https://github.com/RicoSuter/NSwag/wiki/NSwagStudio -> NSwagStudio for keeping up with API changes easier

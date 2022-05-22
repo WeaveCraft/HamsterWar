@@ -1,0 +1,24 @@
+﻿@page "/hamsters/"
+@inject IClient httpClient
+<h3>Index</h3>
+
+@if(Model == null)
+{
+    <div class="alert alert-info">
+        <h4>Loading Data...</h4>
+    </div>
+}
+else
+{
+    <a href="/hamsters/create"></a>
+    <br />
+}
+
+@code {
+    private List<HamsterReadOnlyDto> Model;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Model = (await httpClient.HamstersAllAsync()).ToList();
+    }
+}
