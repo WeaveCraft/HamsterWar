@@ -5,11 +5,13 @@ using HamsterApp.Entities.Models;
 using AutoMapper;
 using HamsterApp.API.Static;
 using HamsterApp.Entities.DTO.Hamster;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HamsterApp.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class HamstersController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -22,19 +24,36 @@ namespace HamsterApp.API.Controllers
             _mapper = mapper;
             _logger = logger;
         }
+        public List<Hamster> Hamsters { get; set; } = new List<Hamster>();
+
+        //[HttpGet("/hamsters/random")]
+        //public async Task<ActionResult<HamsterReadOnlyDto>> GetTwoHamsters()
+        //{
+        //    try
+        //    {
+        //        var hamster = await _context.Hamsters.FindAsync(id);
+
+        //        Hamsters = await _context.Hamsters.OrderBy(h => Guid.NewGuid()).Take(2).ToListAsync();
+        //    }
+        //    catch
+        //    {
+        //        throw new ArgumentException();
+        //    }
+        //}
 
         // GET: api/Hamsters
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<HamsterReadOnlyDto>>> GetHamsters()
+        public async Task<ActionResult<HamsterReadOnlyDto>> GetHamsters()
         {
             try
             {
-                var hamsters = _mapper.Map<IEnumerable<HamsterReadOnlyDto>>(await _context.Hamsters.ToListAsync());
-                return Ok(hamsters);
+                var authors = await _context.Hamsters.ToListAsync();
+                var authorDtos = _mapper.Map<IEnumerable<HamsterReadOnlyDto>>(authors);
+                return Ok(authorDtos);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Error performing GET in {nameof(GetHamsters)}");
+                _logger.LogError(ex, $"Error Performing GET in {nameof(GetHamsters)}");
                 return StatusCode(500, Messages.Error500Message);
             }
         }

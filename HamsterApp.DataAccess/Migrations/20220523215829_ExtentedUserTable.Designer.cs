@@ -4,6 +4,7 @@ using HamsterApp.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HamsterApp.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220523215829_ExtentedUserTable")]
+    partial class ExtentedUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,44 +95,6 @@ namespace HamsterApp.DataAccess.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "e7eabebd-e10c-4da9-b6aa-2db9cad6b84d",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "fa7fdda1-0566-4b85-9cb7-30d9f3fef6ec",
-                            Email = "admin@hamsters.com",
-                            EmailConfirmed = false,
-                            FirstName = "System",
-                            LastName = "Admin",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@HAMSTERS.COM",
-                            NormalizedUserName = "ADMIN@HAMSTERS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAS0buIDmfcuWj54SUwWO21stF1Sh5IiC1+CvUxkbukYJsM+VZq32GOd7KsgYWmazg==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "9ee712a6-5458-4ef8-96ee-5cccee1983aa",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@hamsters.com"
-                        },
-                        new
-                        {
-                            Id = "087f2124-f507-4642-a8f7-84442abb3d70",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "193d103f-3c8f-4a87-98f8-fff8b6b52da3",
-                            Email = "user@hamsters.com",
-                            EmailConfirmed = false,
-                            FirstName = "System",
-                            LastName = "User",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "USER@HAMSTERS.COM",
-                            NormalizedUserName = "USER@HAMSTERS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJ/2U3Pisjsb68+C9dRoLNPWb/rl3EThLpM+BRf7y747fLv52WUB+d9p8E0D98KqMg==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "540a0e5f-640b-4286-b21b-caad27ee6571",
-                            TwoFactorEnabled = false,
-                            UserName = "user@hamsters.com"
-                        });
                 });
 
             modelBuilder.Entity("HamsterApp.Entities.Models.Hamster", b =>
@@ -219,22 +183,6 @@ namespace HamsterApp.DataAccess.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "3845d87b-b230-41ff-a1a7-84bbd7ec821d",
-                            ConcurrencyStamp = "7362d0bd-4219-4783-825b-6b11f96fea40",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        },
-                        new
-                        {
-                            Id = "985f4930-21ad-4249-abaf-e4251b1553d9",
-                            ConcurrencyStamp = "0ef0315b-7ad5-4964-abc3-b07019b575c1",
-                            Name = "Admin",
-                            NormalizedName = "ADMIN"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -322,18 +270,6 @@ namespace HamsterApp.DataAccess.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "087f2124-f507-4642-a8f7-84442abb3d70",
-                            RoleId = "3845d87b-b230-41ff-a1a7-84bbd7ec821d"
-                        },
-                        new
-                        {
-                            UserId = "e7eabebd-e10c-4da9-b6aa-2db9cad6b84d",
-                            RoleId = "985f4930-21ad-4249-abaf-e4251b1553d9"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
