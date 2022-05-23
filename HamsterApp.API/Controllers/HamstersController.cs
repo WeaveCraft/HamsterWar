@@ -24,26 +24,10 @@ namespace HamsterApp.API.Controllers
             _mapper = mapper;
             _logger = logger;
         }
-        public List<Hamster> Hamsters { get; set; } = new List<Hamster>();
-
-        //[HttpGet("/hamsters/random")]
-        //public async Task<ActionResult<HamsterReadOnlyDto>> GetTwoHamsters()
-        //{
-        //    try
-        //    {
-        //        var hamster = await _context.Hamsters.FindAsync(id);
-
-        //        Hamsters = await _context.Hamsters.OrderBy(h => Guid.NewGuid()).Take(2).ToListAsync();
-        //    }
-        //    catch
-        //    {
-        //        throw new ArgumentException();
-        //    }
-        //}
 
         // GET: api/Hamsters
         [HttpGet]
-        public async Task<ActionResult<HamsterReadOnlyDto>> GetHamsters()
+        public async Task<ActionResult<IEnumerable<HamsterReadOnlyDto>>> GetHamsters()
         {
             try
             {
@@ -85,6 +69,7 @@ namespace HamsterApp.API.Controllers
         // PUT: api/Hamsters/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> PutHamster(int id, HamsterUpdateDto hamsterDto)
         {
             if (id != hamsterDto.Id)
@@ -127,6 +112,7 @@ namespace HamsterApp.API.Controllers
         // POST: api/Hamsters
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<HamsterCreateDto>> PostHamster(HamsterCreateDto hamsterDto)
         {
             try
@@ -146,6 +132,7 @@ namespace HamsterApp.API.Controllers
 
         // DELETE: api/Hamsters/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteHamster(int id)
         {
             try
