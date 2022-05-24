@@ -133,13 +133,11 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.16.0.0 (NJsonSchema v10.7.1.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class Client : IClient
     {
-        private string _baseUrl = "";
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
 
-        public Client(string baseUrl, System.Net.Http.HttpClient httpClient)
+        public Client(System.Net.Http.HttpClient httpClient)
         {
-            BaseUrl = baseUrl;
             _httpClient = httpClient;
             _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(CreateSerializerSettings);
         }
@@ -149,12 +147,6 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
             var settings = new Newtonsoft.Json.JsonSerializerSettings();
             UpdateJsonSerializerSettings(settings);
             return settings;
-        }
-
-        public string BaseUrl
-        {
-            get { return _baseUrl; }
-            set { _baseUrl = value; }
         }
 
         protected Newtonsoft.Json.JsonSerializerSettings JsonSerializerSettings { get { return _settings.Value; } }
@@ -178,7 +170,7 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
         public virtual async System.Threading.Tasks.Task RegisterAsync(UserDto body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Auth/register");
+            urlBuilder_.Append("api/Auth/register");
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -249,7 +241,7 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
         public virtual async System.Threading.Tasks.Task<AuthResponse> LoginAsync(LoginUserDto body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Auth/login");
+            urlBuilder_.Append("api/Auth/login");
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -326,7 +318,7 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<HamsterReadOnlyDto>> HamstersAllAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Hamsters");
+            urlBuilder_.Append("api/Hamsters");
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -400,7 +392,7 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
         public virtual async System.Threading.Tasks.Task<HamsterCreateDto> HamstersPOSTAsync(HamsterCreateDto body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Hamsters");
+            urlBuilder_.Append("api/Hamsters");
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -480,7 +472,7 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
                 throw new System.ArgumentNullException("id");
 
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Hamsters/{id}");
+            urlBuilder_.Append("api/Hamsters/{id}");
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
 
             var client_ = _httpClient;
@@ -558,7 +550,7 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
                 throw new System.ArgumentNullException("id");
 
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Hamsters/{id}");
+            urlBuilder_.Append("api/Hamsters/{id}");
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
 
             var client_ = _httpClient;
@@ -633,7 +625,7 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
                 throw new System.ArgumentNullException("id");
 
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Hamsters/{id}");
+            urlBuilder_.Append("api/Hamsters/{id}");
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
 
             var client_ = _httpClient;
@@ -702,7 +694,7 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<MatchReadOnlyDto>> MatchesAllAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Matches");
+            urlBuilder_.Append("api/Matches");
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -776,7 +768,7 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
         public virtual async System.Threading.Tasks.Task<Match> MatchesPOSTAsync(MatchCreateDto body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Matches");
+            urlBuilder_.Append("api/Matches");
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -856,7 +848,7 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
                 throw new System.ArgumentNullException("id");
 
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Matches/{id}");
+            urlBuilder_.Append("api/Matches/{id}");
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
 
             var client_ = _httpClient;
@@ -934,7 +926,7 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
                 throw new System.ArgumentNullException("id");
 
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Matches/{id}");
+            urlBuilder_.Append("api/Matches/{id}");
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
 
             var client_ = _httpClient;
@@ -1009,7 +1001,7 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
                 throw new System.ArgumentNullException("id");
 
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Matches/{id}");
+            urlBuilder_.Append("api/Matches/{id}");
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
 
             var client_ = _httpClient;

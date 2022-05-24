@@ -1,5 +1,4 @@
 using Blazored.LocalStorage;
-using HamsterApp.Blazor.ServerUi.Data;
 using HamsterApp.Blazor.ServerUi.Services;
 using HamsterApp.Blazor.ServerUi.Services.Base;
 using Microsoft.AspNetCore.Authentication;
@@ -12,7 +11,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddBlazoredLocalStorage();
-builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddHttpClient<IClient, Client>(cl => cl.BaseAddress = new Uri("https://localhost:7126"));
 
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
