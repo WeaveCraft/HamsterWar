@@ -11,7 +11,7 @@ namespace HamsterApp.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    //[Authorize] //Not needed becouse we add [Authorize] for the specific Method that requires Authentication. 
     public class HamstersController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
