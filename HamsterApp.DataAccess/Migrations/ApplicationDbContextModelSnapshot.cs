@@ -99,7 +99,7 @@ namespace HamsterApp.DataAccess.Migrations
                         {
                             Id = "e7eabebd-e10c-4da9-b6aa-2db9cad6b84d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6fd2e87c-6380-4aef-977f-3f4226db0e92",
+                            ConcurrencyStamp = "8b7904fd-8ae3-4d69-a614-98c74b36fe71",
                             Email = "admin@hamsters.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -107,9 +107,9 @@ namespace HamsterApp.DataAccess.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@HAMSTERS.COM",
                             NormalizedUserName = "ADMIN@HAMSTERS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEG169mR/mByhRv+MRbcsmXZ4Qcu0eIPyKA3t6chAhRUUlDSoDQLlAxqEAvmULYUuGw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFfrj0dI8O37MZAmqJRQ5+jCQl+G9Ru8AapVxi2iKQKzjZAWnLFSpkVTyAbvcEURZw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "91d85170-c21d-43b8-995b-6f941aa9b098",
+                            SecurityStamp = "e63566b1-b956-49cb-9a2d-f0a5e2fe6551",
                             TwoFactorEnabled = false,
                             UserName = "admin@hamsters.com"
                         },
@@ -117,7 +117,7 @@ namespace HamsterApp.DataAccess.Migrations
                         {
                             Id = "087f2124-f507-4642-a8f7-84442abb3d70",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1c8c80b2-9ae4-4609-8165-5e46f1b195ec",
+                            ConcurrencyStamp = "d1a45b0d-5026-4d69-84e8-5a59af5977d0",
                             Email = "user@hamsters.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -125,9 +125,9 @@ namespace HamsterApp.DataAccess.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@HAMSTERS.COM",
                             NormalizedUserName = "USER@HAMSTERS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEB8Dghy6V2SReOomA3Va/QGpgJRBKMUm1ZfR0x0q896F8LT1STw3EC9g8x4GQXUs+Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBqe0da5byladRyMOF7rhsrXDmBKNiwhPnpxqpJSqBueyHPUQ5B0nUFdrY2j8XAuBw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "15a588e1-6660-42ec-842e-466773b806aa",
+                            SecurityStamp = "168fd148-c52b-4ee6-ac1c-e6fff907d918",
                             TwoFactorEnabled = false,
                             UserName = "user@hamsters.com"
                         });
@@ -224,14 +224,14 @@ namespace HamsterApp.DataAccess.Migrations
                         new
                         {
                             Id = "3845d87b-b230-41ff-a1a7-84bbd7ec821d",
-                            ConcurrencyStamp = "f7f15523-dbf4-438b-9397-13f52b1e4a5d",
+                            ConcurrencyStamp = "51cabc8d-4943-48de-9870-373335453181",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = "985f4930-21ad-4249-abaf-e4251b1553d9",
-                            ConcurrencyStamp = "bea4707d-89d4-4a92-a839-3f5455f112d5",
+                            ConcurrencyStamp = "2807dd19-617f-49f4-97a7-f9d63bf6e476",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });

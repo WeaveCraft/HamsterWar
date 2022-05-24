@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HamsterApp.DataAccess.Migrations
 {
-    public partial class AddedIdentityTables : Migration
+    public partial class FirstMigrationToDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,6 +28,8 @@ namespace HamsterApp.DataAccess.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -46,6 +48,26 @@ namespace HamsterApp.DataAccess.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Hamsters",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Age = table.Column<int>(type: "int", nullable: true),
+                    FavFood = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Loves = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImgName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Wins = table.Column<int>(type: "int", nullable: true),
+                    Losses = table.Column<int>(type: "int", nullable: true),
+                    Games = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Hamsters", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -154,6 +176,55 @@ namespace HamsterApp.DataAccess.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Matches",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    HamsterId = table.Column<int>(type: "int", nullable: false),
+                    WinId = table.Column<int>(type: "int", nullable: false),
+                    LoseId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Matches", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Matches_Hamsters_HamsterId",
+                        column: x => x.HamsterId,
+                        principalTable: "Hamsters",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { "3845d87b-b230-41ff-a1a7-84bbd7ec821d", "51cabc8d-4943-48de-9870-373335453181", "User", "USER" },
+                    { "985f4930-21ad-4249-abaf-e4251b1553d9", "2807dd19-617f-49f4-97a7-f9d63bf6e476", "Admin", "ADMIN" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[,]
+                {
+                    { "087f2124-f507-4642-a8f7-84442abb3d70", 0, "d1a45b0d-5026-4d69-84e8-5a59af5977d0", "user@hamsters.com", false, "System", "User", false, null, "USER@HAMSTERS.COM", "USER@HAMSTERS.COM", "AQAAAAEAACcQAAAAEBqe0da5byladRyMOF7rhsrXDmBKNiwhPnpxqpJSqBueyHPUQ5B0nUFdrY2j8XAuBw==", null, false, "168fd148-c52b-4ee6-ac1c-e6fff907d918", false, "user@hamsters.com" },
+                    { "e7eabebd-e10c-4da9-b6aa-2db9cad6b84d", 0, "8b7904fd-8ae3-4d69-a614-98c74b36fe71", "admin@hamsters.com", false, "System", "Admin", false, null, "ADMIN@HAMSTERS.COM", "ADMIN@HAMSTERS.COM", "AQAAAAEAACcQAAAAEFfrj0dI8O37MZAmqJRQ5+jCQl+G9Ru8AapVxi2iKQKzjZAWnLFSpkVTyAbvcEURZw==", null, false, "e63566b1-b956-49cb-9a2d-f0a5e2fe6551", false, "admin@hamsters.com" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { "3845d87b-b230-41ff-a1a7-84bbd7ec821d", "087f2124-f507-4642-a8f7-84442abb3d70" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { "985f4930-21ad-4249-abaf-e4251b1553d9", "e7eabebd-e10c-4da9-b6aa-2db9cad6b84d" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -192,6 +263,11 @@ namespace HamsterApp.DataAccess.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Matches_HamsterId",
+                table: "Matches",
+                column: "HamsterId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -212,10 +288,16 @@ namespace HamsterApp.DataAccess.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Matches");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Hamsters");
         }
     }
 }

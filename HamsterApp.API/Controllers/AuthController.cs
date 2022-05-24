@@ -14,7 +14,7 @@ namespace HamsterApp.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [AllowAnonymous]
+    //[AllowAnonymous]
     public class AuthController : ControllerBase
     {
         private readonly ILogger<AuthController> _logger;
