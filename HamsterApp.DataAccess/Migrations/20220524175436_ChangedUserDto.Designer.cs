@@ -4,6 +4,7 @@ using HamsterApp.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HamsterApp.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220524175436_ChangedUserDto")]
+    partial class ChangedUserDto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,7 +101,7 @@ namespace HamsterApp.DataAccess.Migrations
                         {
                             Id = "e7eabebd-e10c-4da9-b6aa-2db9cad6b84d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6fd2e87c-6380-4aef-977f-3f4226db0e92",
+                            ConcurrencyStamp = "92bbd9d8-4c74-46f0-b111-e17c8c38bbeb",
                             Email = "admin@hamsters.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -107,9 +109,9 @@ namespace HamsterApp.DataAccess.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@HAMSTERS.COM",
                             NormalizedUserName = "ADMIN@HAMSTERS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEG169mR/mByhRv+MRbcsmXZ4Qcu0eIPyKA3t6chAhRUUlDSoDQLlAxqEAvmULYUuGw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPXasSvZPhpJFxdzEFD4nILblkSXr6Uwrl89R0RW/utVswKZQS0gPXAKg7LGqc+EnQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "91d85170-c21d-43b8-995b-6f941aa9b098",
+                            SecurityStamp = "67004154-8185-4532-9ac9-8d4540059055",
                             TwoFactorEnabled = false,
                             UserName = "admin@hamsters.com"
                         },
@@ -117,7 +119,7 @@ namespace HamsterApp.DataAccess.Migrations
                         {
                             Id = "087f2124-f507-4642-a8f7-84442abb3d70",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1c8c80b2-9ae4-4609-8165-5e46f1b195ec",
+                            ConcurrencyStamp = "7d8f7f02-889d-44da-b935-7062c595b9ff",
                             Email = "user@hamsters.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -125,9 +127,9 @@ namespace HamsterApp.DataAccess.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@HAMSTERS.COM",
                             NormalizedUserName = "USER@HAMSTERS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEB8Dghy6V2SReOomA3Va/QGpgJRBKMUm1ZfR0x0q896F8LT1STw3EC9g8x4GQXUs+Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDEZtQEdvvAmokU21jtknZ6isrbA9Y+HEs5W/dqBwC7uQmo7o+TLSi7cbbf5wjtaQg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "15a588e1-6660-42ec-842e-466773b806aa",
+                            SecurityStamp = "4d3d7787-9f7d-4095-9feb-14bff42aabd7",
                             TwoFactorEnabled = false,
                             UserName = "user@hamsters.com"
                         });
@@ -224,14 +226,14 @@ namespace HamsterApp.DataAccess.Migrations
                         new
                         {
                             Id = "3845d87b-b230-41ff-a1a7-84bbd7ec821d",
-                            ConcurrencyStamp = "f7f15523-dbf4-438b-9397-13f52b1e4a5d",
+                            ConcurrencyStamp = "5f1772af-b24d-4f43-b5fb-befa3027b79e",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = "985f4930-21ad-4249-abaf-e4251b1553d9",
-                            ConcurrencyStamp = "bea4707d-89d4-4a92-a839-3f5455f112d5",
+                            ConcurrencyStamp = "59cd0547-c9d2-4781-825d-d329a80234d5",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });

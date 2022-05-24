@@ -12,7 +12,7 @@ namespace HamsterApp.Blazor.ServerUi.Providers
         public ApiAuthenticationStateProvider(ILocalStorageService localStorage)
         {
             _localStorage = localStorage;
-            _jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
+            _jwtSecurityTokenHandler = new JwtSecurityTokenHandler(); //Decrypt Token
         }
 
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()

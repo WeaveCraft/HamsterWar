@@ -1,5 +1,6 @@
 ﻿@page "/hamsters/"
 @inject IHamsterService hamsterService
+@inject IJSRuntime js
 <h3>Index</h3>
 
 @if(response.Success == false)
@@ -21,9 +22,11 @@ else
     <br />
     <table class="table table-responsive">
         <thead>
+            <tr>
             <th>Name: </th>
             <th>Age: </th>
             <th>Action: </th>
+            </tr>
         </thead>
         <tbody>
             @foreach(var hamster in Model)

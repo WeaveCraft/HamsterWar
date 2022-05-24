@@ -1,8 +1,4 @@
-﻿using Blazored.LocalStorage;
-using HamsterApp.Blazor.ServerUi.Providers;
-using HamsterApp.Blazor.ServerUi.Services.Base;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Components.Authorization;
+﻿using HamsterApp.Blazor.ServerUi.Services.Base;
 
 namespace HamsterApp.Blazor.ServerUi.Services.Authentication
 {

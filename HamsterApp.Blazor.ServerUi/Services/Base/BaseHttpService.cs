@@ -23,6 +23,10 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
             {
                 return new Response<Guid>() { Message = "The requested item could not be found.", Success = false };
             }
+            if (apiException.StatusCode >= 200 && apiException.StatusCode <= 299)
+            {
+                return new Response<Guid>() { Message = "Operation Reported Success", Success = true };
+            }
 
             return new Response<Guid>() { Message = "Something wetn wrong, please give it another try.", Success = false };
         }
