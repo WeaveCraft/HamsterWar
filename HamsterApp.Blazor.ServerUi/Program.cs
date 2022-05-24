@@ -1,8 +1,10 @@
 using Blazored.LocalStorage;
+using HamsterApp.Blazor.ServerUi.Providers;
 using HamsterApp.Blazor.ServerUi.Services;
 using HamsterApp.Blazor.ServerUi.Services.Base;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +16,11 @@ builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddHttpClient<IClient, Client>(cl => cl.BaseAddress = new Uri("https://localhost:7126"));
 
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<ApiAuthenticationStateProvider>();
+
+
+builder.Services.AddScoped<AuthenticationStateProvider>(p =>
+                p.GetRequiredService<ApiAuthenticationStateProvider>());
 builder.Services.AddScoped<IHamsterService, HamsterService>();
 
 
