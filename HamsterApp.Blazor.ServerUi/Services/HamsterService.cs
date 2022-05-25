@@ -11,6 +11,23 @@ namespace HamsterApp.Blazor.ServerUi.Services
             _client = client;
         }
 
+        public async Task<Response<int>> CreateHamster(HamsterCreateDto hamster)
+        {
+            Response<int> response = new Response<int> {  Success = true };
+
+            try
+            {
+                await GetBearerToken();
+                await _client.HamstersPOSTAsync(hamster);
+            }
+            catch (ApiException ex)
+            {
+
+                response = ConvertApiExceptions<int>(ex);
+            }
+            return response;
+        }
+
         public async Task<Response<List<HamsterReadOnlyDto>>> GetHamsters()
         {
             Response<List<HamsterReadOnlyDto>> response;

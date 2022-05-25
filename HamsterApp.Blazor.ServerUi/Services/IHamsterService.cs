@@ -5,5 +5,6 @@ namespace HamsterApp.Blazor.ServerUi.Services
     public interface IHamsterService
     {
         Task<Response<List<HamsterReadOnlyDto>>> GetHamsters();
+        Task<Response<int>> CreateHamster(HamsterCreateDto hamster);
     }
 }

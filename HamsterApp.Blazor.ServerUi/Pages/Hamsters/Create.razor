@@ -1,7 +1,67 @@
 ﻿@page "/hamsters/create/"
+@inject IHamsterService hamsterService
+@inject NavigationManager navManager
 
-<h3>Create</h3>
+<h3>Create New Hamster</h3>
+<EditForm Model="Hamster" OnValidSubmit="HandleCreateHamster">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="firstname">Name</label>
+        <InputText @bind-Value="Hamster.Name" class="form-control" id="name" />
+        <ValidationMessage For="@(() => Hamster.Name)" />
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="lastname">Age</label>
+        <InputNumber @bind-Value="Hamster.Age" class="form-control" id="age" />
+        <ValidationMessage For="@(() => Hamster.Age)" />
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="bio">Favorite Food</label>
+        <InputTextArea @bind-Value="Hamster.FavFood" class="form-control" id="favfood" />
+        <ValidationMessage For="@(() => Hamster.FavFood)" />
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="bio">Loves</label>
+        <InputTextArea @bind-Value="Hamster.Loves" class="form-control" id="loves" />
+        <ValidationMessage For="@(() => Hamster.Loves)" />
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="bio">Image</label>
+        <InputFile @bind-Value="Hamster.ImgName" class="form-control" id="imgname" />
+        <ValidationMessage For="@(() => Hamster.ImgName)" />
+    </div>
+    <br/>
+     <button class="btn btn-primary" type="submit">
+        <span class="oi oi-pencil"></span>
+        Create Author
+    </button>
+    <button @onclick="BackToList" class="btn btn-outline-secondary">
+        <span class="oi oi-media-skip-backward"></span>
+        Back To List
+    </button>
+
+</EditForm>
 
 @code {
+    private HamsterCreateDto Hamster = new HamsterCreateDto();
 
+    private async Task HandleCreateHamster()
+    {
+        var response = await hamsterService.CreateHamster(Hamster);
+        if (response.Success)
+        {
+            BackToList();
+        }
+    }
+
+    private void BackToList()
+    {
+        navManager.NavigateTo("");
+    }
 }
