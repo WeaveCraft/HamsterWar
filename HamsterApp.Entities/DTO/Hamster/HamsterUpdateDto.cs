@@ -8,7 +8,8 @@ namespace HamsterApp.Entities.DTO.Hamster
         [StringLength(25)]
         public string? Name { get; set; }
         [Required]
-        public int? Age { get; set; }
+        [Range(1, 3, ErrorMessage = "Only hamsters between the age of 1 to 3.")]
+        public int Age { get; set; }
         [Required]
         [StringLength(50)]
         public string? FavFood { get; set; }

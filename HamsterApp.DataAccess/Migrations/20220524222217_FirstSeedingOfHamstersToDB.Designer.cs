@@ -4,6 +4,7 @@ using HamsterApp.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HamsterApp.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220524222217_FirstSeedingOfHamstersToDB")]
+    partial class FirstSeedingOfHamstersToDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,7 +101,7 @@ namespace HamsterApp.DataAccess.Migrations
                         {
                             Id = "e7eabebd-e10c-4da9-b6aa-2db9cad6b84d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d9dae9f6-ba4c-4d09-92ce-9405dfb98d62",
+                            ConcurrencyStamp = "fe5a2197-03b0-4c40-91f7-5025506231ce",
                             Email = "admin@hamsters.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -107,9 +109,9 @@ namespace HamsterApp.DataAccess.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@HAMSTERS.COM",
                             NormalizedUserName = "ADMIN@HAMSTERS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIC0ShsYCBMsaPHXDog5up6B7rESqJKbsZVdWiVPga/iUge0WnlUHPwOUuFIYSyXOA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEL78kr0r7ScxChi0JIjHEL7IbgCC9f0FqhVHGcUYJZPfXEoOLlKUg+42howftcR6tQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8c5e5a22-1976-4e33-9811-7abd74c64517",
+                            SecurityStamp = "109572bd-fa75-4e83-9244-ee8256647b8d",
                             TwoFactorEnabled = false,
                             UserName = "admin@hamsters.com"
                         },
@@ -117,7 +119,7 @@ namespace HamsterApp.DataAccess.Migrations
                         {
                             Id = "087f2124-f507-4642-a8f7-84442abb3d70",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "be2c7085-8510-412f-adda-679dcab6649b",
+                            ConcurrencyStamp = "938fbba7-1382-4e86-a466-7b35f8a854f3",
                             Email = "user@hamsters.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -125,9 +127,9 @@ namespace HamsterApp.DataAccess.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@HAMSTERS.COM",
                             NormalizedUserName = "USER@HAMSTERS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELRvWkHhMeG4SPaMe8Is176oMzm3VBBdMfZDOYdb5cAUML12EAiN1+Vvh8RRqNgzbw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEE7cBHZxWSf7vXL3X0Ii8fRE0r2+EbX2/UbTkSEqHS38Jvrffiikg1H+DaoHXxcfOg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "50878181-6692-4c12-aac1-daec3c0e914a",
+                            SecurityStamp = "6ec78a6d-535c-402b-a0bf-6c649d2c46fe",
                             TwoFactorEnabled = false,
                             UserName = "user@hamsters.com"
                         });
@@ -176,7 +178,7 @@ namespace HamsterApp.DataAccess.Migrations
                             Age = 2,
                             FavFood = "Eating1",
                             Games = 0,
-                            ImgName = "hamster-1.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing1",
                             Name = "Hamster1",
@@ -188,7 +190,7 @@ namespace HamsterApp.DataAccess.Migrations
                             Age = 3,
                             FavFood = "Eating2",
                             Games = 0,
-                            ImgName = "hamster-2.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing2",
                             Name = "Hamster2",
@@ -200,7 +202,7 @@ namespace HamsterApp.DataAccess.Migrations
                             Age = 2,
                             FavFood = "Eating3",
                             Games = 0,
-                            ImgName = "hamster-3.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing3",
                             Name = "Hamster3",
@@ -212,7 +214,7 @@ namespace HamsterApp.DataAccess.Migrations
                             Age = 1,
                             FavFood = "Eating4",
                             Games = 0,
-                            ImgName = "hamster-4.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing4",
                             Name = "Hamster4",
@@ -224,7 +226,7 @@ namespace HamsterApp.DataAccess.Migrations
                             Age = 2,
                             FavFood = "Eating5",
                             Games = 0,
-                            ImgName = "hamster-5.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing5",
                             Name = "Hamster5",
@@ -236,7 +238,7 @@ namespace HamsterApp.DataAccess.Migrations
                             Age = 2,
                             FavFood = "Eating6",
                             Games = 0,
-                            ImgName = "hamster-6.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing6",
                             Name = "Hamster6",
@@ -248,7 +250,7 @@ namespace HamsterApp.DataAccess.Migrations
                             Age = 3,
                             FavFood = "Eating7",
                             Games = 0,
-                            ImgName = "hamster-7.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing7",
                             Name = "Hamster7",
@@ -260,7 +262,7 @@ namespace HamsterApp.DataAccess.Migrations
                             Age = 2,
                             FavFood = "Eating8",
                             Games = 0,
-                            ImgName = "hamster-8.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing8",
                             Name = "Hamster8",
@@ -272,7 +274,7 @@ namespace HamsterApp.DataAccess.Migrations
                             Age = 1,
                             FavFood = "Eating9",
                             Games = 0,
-                            ImgName = "hamster-9.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing9",
                             Name = "Hamster9",
@@ -284,7 +286,7 @@ namespace HamsterApp.DataAccess.Migrations
                             Age = 2,
                             FavFood = "Eating10",
                             Games = 0,
-                            ImgName = "hamster-10.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing10",
                             Name = "Hamster10",
@@ -296,7 +298,7 @@ namespace HamsterApp.DataAccess.Migrations
                             Age = 3,
                             FavFood = "Eating11",
                             Games = 0,
-                            ImgName = "hamster-11.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing11",
                             Name = "Hamster11",
@@ -308,7 +310,7 @@ namespace HamsterApp.DataAccess.Migrations
                             Age = 2,
                             FavFood = "Eating12",
                             Games = 0,
-                            ImgName = "hamster-12.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing12",
                             Name = "Hamster12",
@@ -320,7 +322,7 @@ namespace HamsterApp.DataAccess.Migrations
                             Age = 3,
                             FavFood = "Eating13",
                             Games = 0,
-                            ImgName = "hamster-13.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing13",
                             Name = "Hamster13",
@@ -332,7 +334,7 @@ namespace HamsterApp.DataAccess.Migrations
                             Age = 1,
                             FavFood = "Eating14",
                             Games = 0,
-                            ImgName = "hamster-14.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing14",
                             Name = "Hamster14",
@@ -344,7 +346,7 @@ namespace HamsterApp.DataAccess.Migrations
                             Age = 1,
                             FavFood = "Eating15",
                             Games = 0,
-                            ImgName = "hamster-15.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing15",
                             Name = "Hamster15",
@@ -353,301 +355,13 @@ namespace HamsterApp.DataAccess.Migrations
                         new
                         {
                             Id = 16,
-                            Age = 1,
+                            Age = 3,
                             FavFood = "Eating16",
                             Games = 0,
-                            ImgName = "hamster-16.jpg",
+                            ImgName = "",
                             Losses = 0,
                             Loves = "Losing16",
                             Name = "Hamster16",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Age = 1,
-                            FavFood = "Eating17",
-                            Games = 0,
-                            ImgName = "hamster-17.jpg",
-                            Losses = 0,
-                            Loves = "Losing17",
-                            Name = "Hamster17",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Age = 1,
-                            FavFood = "Eating18",
-                            Games = 0,
-                            ImgName = "hamster-18.jpg",
-                            Losses = 0,
-                            Loves = "Losing18",
-                            Name = "Hamster18",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Age = 1,
-                            FavFood = "Eating19",
-                            Games = 0,
-                            ImgName = "hamster-19.jpg",
-                            Losses = 0,
-                            Loves = "Losing19",
-                            Name = "Hamster19",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 20,
-                            Age = 1,
-                            FavFood = "Eating20",
-                            Games = 0,
-                            ImgName = "hamster-20.jpg",
-                            Losses = 0,
-                            Loves = "Losing20",
-                            Name = "Hamster20",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 21,
-                            Age = 1,
-                            FavFood = "Eating21",
-                            Games = 0,
-                            ImgName = "hamster-21.jpg",
-                            Losses = 0,
-                            Loves = "Losing21",
-                            Name = "Hamster21",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 22,
-                            Age = 1,
-                            FavFood = "Eating22",
-                            Games = 0,
-                            ImgName = "hamster-22.jpg",
-                            Losses = 0,
-                            Loves = "Losing22",
-                            Name = "Hamster22",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Age = 1,
-                            FavFood = "Eating23",
-                            Games = 0,
-                            ImgName = "hamster-23.jpg",
-                            Losses = 0,
-                            Loves = "Losing23",
-                            Name = "Hamster23",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Age = 3,
-                            FavFood = "Eating24",
-                            Games = 0,
-                            ImgName = "hamster-24.jpg",
-                            Losses = 0,
-                            Loves = "Losing24",
-                            Name = "Hamster24",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Age = 1,
-                            FavFood = "Eating25",
-                            Games = 0,
-                            ImgName = "hamster-25.jpg",
-                            Losses = 0,
-                            Loves = "Losing25",
-                            Name = "Hamster25",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 26,
-                            Age = 1,
-                            FavFood = "Eating26",
-                            Games = 0,
-                            ImgName = "hamster-26.jpg",
-                            Losses = 0,
-                            Loves = "Losing26",
-                            Name = "Hamster26",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 27,
-                            Age = 1,
-                            FavFood = "Eating27",
-                            Games = 0,
-                            ImgName = "hamster-27.jpg",
-                            Losses = 0,
-                            Loves = "Losing27",
-                            Name = "Hamster27",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 28,
-                            Age = 1,
-                            FavFood = "Eating28",
-                            Games = 0,
-                            ImgName = "hamster-28.jpg",
-                            Losses = 0,
-                            Loves = "Losing28",
-                            Name = "Hamster28",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 29,
-                            Age = 1,
-                            FavFood = "Eating29",
-                            Games = 0,
-                            ImgName = "hamster-29.jpg",
-                            Losses = 0,
-                            Loves = "Losing29",
-                            Name = "Hamster29",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Age = 1,
-                            FavFood = "Eating30",
-                            Games = 0,
-                            ImgName = "hamster-30.jpg",
-                            Losses = 0,
-                            Loves = "Losing30",
-                            Name = "Hamster30",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 31,
-                            Age = 1,
-                            FavFood = "Eating31",
-                            Games = 0,
-                            ImgName = "hamster-31.jpg",
-                            Losses = 0,
-                            Loves = "Losing31",
-                            Name = "Hamster31",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 32,
-                            Age = 1,
-                            FavFood = "Eating32",
-                            Games = 0,
-                            ImgName = "hamster-32.jpg",
-                            Losses = 0,
-                            Loves = "Losing32",
-                            Name = "Hamster32",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 33,
-                            Age = 1,
-                            FavFood = "Eating33",
-                            Games = 0,
-                            ImgName = "hamster-33.jpg",
-                            Losses = 0,
-                            Loves = "Losing33",
-                            Name = "Hamster33",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 34,
-                            Age = 1,
-                            FavFood = "Eating34",
-                            Games = 0,
-                            ImgName = "hamster-34.jpg",
-                            Losses = 0,
-                            Loves = "Losing34",
-                            Name = "Hamster34",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 35,
-                            Age = 3,
-                            FavFood = "Eating35",
-                            Games = 0,
-                            ImgName = "hamster-35.jpg",
-                            Losses = 0,
-                            Loves = "Losing35",
-                            Name = "Hamster35",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 36,
-                            Age = 2,
-                            FavFood = "Eating36",
-                            Games = 0,
-                            ImgName = "hamster-36.jpg",
-                            Losses = 0,
-                            Loves = "Losing36",
-                            Name = "Hamster36",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 37,
-                            Age = 3,
-                            FavFood = "Eating37",
-                            Games = 0,
-                            ImgName = "hamster-37.jpg",
-                            Losses = 0,
-                            Loves = "Losing37",
-                            Name = "Hamster37",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 38,
-                            Age = 1,
-                            FavFood = "Eating38",
-                            Games = 0,
-                            ImgName = "hamster-38.jpg",
-                            Losses = 0,
-                            Loves = "Losing38",
-                            Name = "Hamster38",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 39,
-                            Age = 1,
-                            FavFood = "Eating39",
-                            Games = 0,
-                            ImgName = "hamster-39.jpg",
-                            Losses = 0,
-                            Loves = "Losing39",
-                            Name = "Hamster39",
-                            Wins = 0
-                        },
-                        new
-                        {
-                            Id = 40,
-                            Age = 3,
-                            FavFood = "Eating40",
-                            Games = 0,
-                            ImgName = "hamster-40.jpg",
-                            Losses = 0,
-                            Loves = "Losing40",
-                            Name = "Hamster40",
                             Wins = 0
                         });
                 });
@@ -706,14 +420,14 @@ namespace HamsterApp.DataAccess.Migrations
                         new
                         {
                             Id = "3845d87b-b230-41ff-a1a7-84bbd7ec821d",
-                            ConcurrencyStamp = "15512b02-f3ae-4093-aeed-dd4a3751a9e2",
+                            ConcurrencyStamp = "9dd64476-1bfc-49ca-85c0-5cec51d429d8",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = "985f4930-21ad-4249-abaf-e4251b1553d9",
-                            ConcurrencyStamp = "c20c852b-ea67-451e-ae55-5c34d1d07e39",
+                            ConcurrencyStamp = "2174ada1-575b-4a25-9e65-39199ac7ff91",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
