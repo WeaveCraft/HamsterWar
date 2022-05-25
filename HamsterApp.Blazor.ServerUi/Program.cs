@@ -2,6 +2,8 @@ using Blazored.LocalStorage;
 using HamsterApp.Blazor.ServerUi.Providers;
 using HamsterApp.Blazor.ServerUi.Services.Base;
 using HamsterApp.Blazor.ServerUi.Services.Authentication;
+using HamsterApp.Blazor.ServerUi.LoadImage;
+using HamsterApp.Blazor.ServerUi.LoadImage.ILoadImage;
 using Microsoft.AspNetCore.Components.Authorization;
 using HamsterApp.Blazor.ServerUi.Services;
 
@@ -17,6 +19,8 @@ builder.Services.AddScoped<ApiAuthenticationStateProvider>();
 builder.Services.AddScoped<AuthenticationStateProvider>(p =>
                 p.GetRequiredService<ApiAuthenticationStateProvider>());
 builder.Services.AddScoped<IHamsterService, HamsterService>();
+
+builder.Services.AddScoped<IFileUpload, FileUpload>();
 
 
 var app = builder.Build();

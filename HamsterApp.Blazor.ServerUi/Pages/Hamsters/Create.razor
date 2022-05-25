@@ -1,42 +1,47 @@
 ﻿@page "/hamsters/create/"
 @inject IHamsterService hamsterService
 @inject NavigationManager navManager
+@inject IFileUpload fileUpload
+@inject IJSRuntime jsRuntime
 
 <h3>Create New Hamster</h3>
 <EditForm Model="Hamster" OnValidSubmit="HandleCreateHamster">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
-    <div class="form-group">
+    <div class="form-group col-6">
         <label for="firstname">Name</label>
         <InputText @bind-Value="Hamster.Name" class="form-control" id="name" />
         <ValidationMessage For="@(() => Hamster.Name)" />
     </div>
     <br/>
-    <div class="form-group">
+    <div class="form-group col-6">
         <label for="lastname">Age</label>
         <InputNumber @bind-Value="Hamster.Age" class="form-control" id="age" />
         <ValidationMessage For="@(() => Hamster.Age)" />
     </div>
     <br/>
-    <div class="form-group">
+    <div class="form-group col-6">
         <label for="bio">Favorite Food</label>
         <InputTextArea @bind-Value="Hamster.FavFood" class="form-control" id="favfood" />
         <ValidationMessage For="@(() => Hamster.FavFood)" />
     </div>
     <br/>
-    <div class="form-group">
+    <div class="form-group col-6">
         <label for="bio">Loves</label>
         <InputTextArea @bind-Value="Hamster.Loves" class="form-control" id="loves" />
         <ValidationMessage For="@(() => Hamster.Loves)" />
     </div>
     <br/>
-    <div class="form-group">
+    <div class="form-group col-6">
         <label for="bio">Image</label>
-        <InputFile @bind-Value="Hamster.ImgName" class="form-control" id="imgname" />
+        <InputFile OnChange="HandleImageUpload" @bind-Value="Hamster.ImgName" class="form-control" id="imgname" />
         <ValidationMessage For="@(() => Hamster.ImgName)" />
     </div>
     <br/>
+    <div class="col-md-2">
+        <img src="@Hamster.ImgName" class="w-100" />
+    </div>
      <button class="btn btn-primary" type="submit">
         <span class="oi oi-pencil"></span>
         Create Author
@@ -63,5 +68,33 @@
     private void BackToList()
     {
         navManager.NavigateTo("");
+    }
+
+    private async Task HandleImageUpload(InputFileChangeEventArgs e)
+    {
+        try
+        {
+            if (e.GetMultipleFiles().Count > 0)
+            {
+                foreach (var file in e.GetMultipleFiles())
+                {
+                    FileInfo fileInfo = new FileInfo(file.Name);
+                    if(fileInfo.Extension.ToLower() == ".jpg" || fileInfo.Extension.ToLower() == ".jpeg" || fileInfo.Extension.ToLower() == ".png")
+                    {
+                        Hamster.ImgName = await fileUpload.UploadFile(file);
+                        await jsRuntime.ToastrSuccess("File Uploaded");
+                    }
+                    else
+                    {
+                        await jsRuntime.ToastrError("Please select .jpg .jpeg .png files only.");
+                        return;
+                    }
+                }
+            }
+        }
+        catch(Exception ex)
+        {
+            await jsRuntime.ToastrError(ex.Message);
+        }
     }
 }
