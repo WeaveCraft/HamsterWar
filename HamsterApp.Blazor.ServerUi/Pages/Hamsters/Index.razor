@@ -39,6 +39,9 @@ else
                         <a class="btn btn-warning" href="/hamsters/update/@hamster.Id"><span class="oi oi-pencil" aria-hidden="true"></span>Edit</a>
                         <button class="btn btn-danger" @onclick=@(() => Delete(@hamster.Id))><span class="oi oi-delete" aria-hidden="true"></span>Delete</button>
                     </td>
+                    <div class="col-md-2">
+        <img src="@hamster.ImgName" class="w-100" />
+    </div>
                 </tr>
             }
         </tbody>
