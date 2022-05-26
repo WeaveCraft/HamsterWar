@@ -91,7 +91,7 @@ namespace HamsterApp.API.Data
                     Age = 2,
                     FavFood = "Eating1",
                     Loves = "Losing1",
-                    ImgName = "hamster-1.jpg",
+                    ImgName = "/images/hamster-1.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -103,7 +103,7 @@ namespace HamsterApp.API.Data
                     Age = 3,
                     FavFood = "Eating2",
                     Loves = "Losing2",
-                    ImgName = "hamster-2.jpg",
+                    ImgName = "/images/hamster-2.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -115,7 +115,7 @@ namespace HamsterApp.API.Data
                     Age = 2,
                     FavFood = "Eating3",
                     Loves = "Losing3",
-                    ImgName = "hamster-3.jpg",
+                    ImgName = "/images/hamster-3.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -127,7 +127,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating4",
                     Loves = "Losing4",
-                    ImgName = "hamster-4.jpg",
+                    ImgName = "/images/hamster-4.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -139,7 +139,7 @@ namespace HamsterApp.API.Data
                     Age = 2,
                     FavFood = "Eating5",
                     Loves = "Losing5",
-                    ImgName = "hamster-5.jpg",
+                    ImgName = "/images/hamster-5.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -151,7 +151,7 @@ namespace HamsterApp.API.Data
                     Age = 2,
                     FavFood = "Eating6",
                     Loves = "Losing6",
-                    ImgName = "hamster-6.jpg",
+                    ImgName = "/images/hamster-6.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -163,7 +163,7 @@ namespace HamsterApp.API.Data
                     Age = 3,
                     FavFood = "Eating7",
                     Loves = "Losing7",
-                    ImgName = "hamster-7.jpg",
+                    ImgName = "/images/hamster-7.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -175,7 +175,7 @@ namespace HamsterApp.API.Data
                     Age = 2,
                     FavFood = "Eating8",
                     Loves = "Losing8",
-                    ImgName = "hamster-8.jpg",
+                    ImgName = "/images/hamster-8.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -187,7 +187,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating9",
                     Loves = "Losing9",
-                    ImgName = "hamster-9.jpg",
+                    ImgName = "/images/hamster-9.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -199,7 +199,7 @@ namespace HamsterApp.API.Data
                     Age = 2,
                     FavFood = "Eating10",
                     Loves = "Losing10",
-                    ImgName = "hamster-10.jpg",
+                    ImgName = "/images/hamster-10.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -211,7 +211,7 @@ namespace HamsterApp.API.Data
                     Age = 3,
                     FavFood = "Eating11",
                     Loves = "Losing11",
-                    ImgName = "hamster-11.jpg",
+                    ImgName = "/images/hamster-11.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -223,7 +223,7 @@ namespace HamsterApp.API.Data
                     Age = 2,
                     FavFood = "Eating12",
                     Loves = "Losing12",
-                    ImgName = "hamster-12.jpg",
+                    ImgName = "/images/hamster-12.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -235,7 +235,7 @@ namespace HamsterApp.API.Data
                     Age = 3,
                     FavFood = "Eating13",
                     Loves = "Losing13",
-                    ImgName = "hamster-13.jpg",
+                    ImgName = "/images/hamster-13.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -247,7 +247,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating14",
                     Loves = "Losing14",
-                    ImgName = "hamster-14.jpg",
+                    ImgName = "/images/hamster-14.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -259,7 +259,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating15",
                     Loves = "Losing15",
-                    ImgName = "hamster-15.jpg",
+                    ImgName = "/images/hamster-15.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -271,7 +271,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating16",
                     Loves = "Losing16",
-                    ImgName = "hamster-16.jpg",
+                    ImgName = "/images/hamster-16.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -283,7 +283,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating17",
                     Loves = "Losing17",
-                    ImgName = "hamster-17.jpg",
+                    ImgName = "/images/hamster-17.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -295,7 +295,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating18",
                     Loves = "Losing18",
-                    ImgName = "hamster-18.jpg",
+                    ImgName = "/images/hamster-18.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -307,7 +307,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating19",
                     Loves = "Losing19",
-                    ImgName = "hamster-19.jpg",
+                    ImgName = "/images/hamster-19.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -319,7 +319,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating20",
                     Loves = "Losing20",
-                    ImgName = "hamster-20.jpg",
+                    ImgName = "/images/hamster-20.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -331,7 +331,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating21",
                     Loves = "Losing21",
-                    ImgName = "hamster-21.jpg",
+                    ImgName = "/images/hamster-21.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -343,7 +343,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating22",
                     Loves = "Losing22",
-                    ImgName = "hamster-22.jpg",
+                    ImgName = "/images/hamster-22.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -355,7 +355,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating23",
                     Loves = "Losing23",
-                    ImgName = "hamster-23.jpg",
+                    ImgName = "/images/hamster-23.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -367,7 +367,7 @@ namespace HamsterApp.API.Data
                     Age = 3,
                     FavFood = "Eating24",
                     Loves = "Losing24",
-                    ImgName = "hamster-24.jpg",
+                    ImgName = "/images/hamster-24.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -379,7 +379,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating25",
                     Loves = "Losing25",
-                    ImgName = "hamster-25.jpg",
+                    ImgName = "/images/hamster-25.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -391,7 +391,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating26",
                     Loves = "Losing26",
-                    ImgName = "hamster-26.jpg",
+                    ImgName = "/images/hamster-26.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -403,7 +403,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating27",
                     Loves = "Losing27",
-                    ImgName = "hamster-27.jpg",
+                    ImgName = "/images/hamster-27.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -415,7 +415,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating28",
                     Loves = "Losing28",
-                    ImgName = "hamster-28.jpg",
+                    ImgName = "/images/hamster-28.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -427,7 +427,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating29",
                     Loves = "Losing29",
-                    ImgName = "hamster-29.jpg",
+                    ImgName = "/images/hamster-29.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -439,7 +439,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating30",
                     Loves = "Losing30",
-                    ImgName = "hamster-30.jpg",
+                    ImgName = "/images/hamster-30.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -451,7 +451,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating31",
                     Loves = "Losing31",
-                    ImgName = "hamster-31.jpg",
+                    ImgName = "/images/hamster-31.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -463,7 +463,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating32",
                     Loves = "Losing32",
-                    ImgName = "hamster-32.jpg",
+                    ImgName = "/images/hamster-32.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -475,7 +475,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating33",
                     Loves = "Losing33",
-                    ImgName = "hamster-33.jpg",
+                    ImgName = "/images/hamster-33.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -487,7 +487,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating34",
                     Loves = "Losing34",
-                    ImgName = "hamster-34.jpg",
+                    ImgName = "/images/hamster-34.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -499,7 +499,7 @@ namespace HamsterApp.API.Data
                     Age = 3,
                     FavFood = "Eating35",
                     Loves = "Losing35",
-                    ImgName = "hamster-35.jpg",
+                    ImgName = "/images/hamster-35.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -511,7 +511,7 @@ namespace HamsterApp.API.Data
                     Age = 2,
                     FavFood = "Eating36",
                     Loves = "Losing36",
-                    ImgName = "hamster-36.jpg",
+                    ImgName = "/images/hamster-36.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -523,7 +523,7 @@ namespace HamsterApp.API.Data
                     Age = 3,
                     FavFood = "Eating37",
                     Loves = "Losing37",
-                    ImgName = "hamster-37.jpg",
+                    ImgName = "/images/hamster-37.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -535,7 +535,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating38",
                     Loves = "Losing38",
-                    ImgName = "hamster-38.jpg",
+                    ImgName = "/images/hamster-38.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -547,7 +547,7 @@ namespace HamsterApp.API.Data
                     Age = 1,
                     FavFood = "Eating39",
                     Loves = "Losing39",
-                    ImgName = "hamster-39.jpg",
+                    ImgName = "/images/hamster-39.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
@@ -559,7 +559,7 @@ namespace HamsterApp.API.Data
                     Age = 3,
                     FavFood = "Eating40",
                     Loves = "Losing40",
-                    ImgName = "hamster-40.jpg",
+                    ImgName = "/images/hamster-40.jpg",
                     Wins = 0,
                     Losses = 0,
                     Games = 0
