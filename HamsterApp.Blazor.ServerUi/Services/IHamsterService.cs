@@ -9,5 +9,6 @@ namespace HamsterApp.Blazor.ServerUi.Services
         Task<Response<HamsterUpdateDto>> GetHamsterForUpdate(int id);
         Task<Response<int>> CreateHamster(HamsterCreateDto hamster);
         Task<Response<int>> UpdateHamster(int id, HamsterUpdateDto hamster);
+        Task<Response<int>> DeleteHamster(int id);
     }
 }

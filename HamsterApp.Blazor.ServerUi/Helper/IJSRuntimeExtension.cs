@@ -13,5 +13,10 @@ namespace HamsterApp.Blazor.ServerUi.Helper
         {
             await jsRuntime.InvokeVoidAsync("ShowToastr", "error", message);
         }
+
+        public static async ValueTask SweetAlertSuccess(this IJSRuntime jsRuntime, string message)
+        {
+            await jsRuntime.InvokeVoidAsync("ShowSwal", "success", message);
+        }
     }
 }

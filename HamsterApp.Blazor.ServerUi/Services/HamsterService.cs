@@ -111,5 +111,22 @@ namespace HamsterApp.Blazor.ServerUi.Services
             }
             return response;
         }
+
+        public async Task<Response<int>> DeleteHamster(int id)
+        {
+            Response<int> response = new Response<int> { Success = true };
+
+            try
+            {
+                await GetBearerToken();
+                await _client.HamstersDELETEAsync(id);
+            }
+            catch (ApiException ex)
+            {
+
+                response = ConvertApiExceptions<int>(ex);
+            }
+            return response;
+        }
     }
 }

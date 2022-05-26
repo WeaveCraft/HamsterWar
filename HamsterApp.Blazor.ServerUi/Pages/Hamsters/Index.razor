@@ -1,16 +1,16 @@
 ﻿@page "/hamsters/"
 @inject IHamsterService hamsterService
-@inject IJSRuntime js
+@inject IJSRuntime jsRuntime
 <h3>Hamster Gallery</h3>
 
-@if(response.Success == false)
+@if (response.Success == false)
 {
     <div class="alert alert-danger">
         <h4>Loading Data...</h4>
     </div>
 }
 
-@if(Model == null)
+@if (Model == null)
 {
     <div class="alert alert-info">
         <h4>@response.Message</h4>
@@ -23,13 +23,13 @@ else
     <table class="table table-responsive">
         <thead>
             <tr>
-            <th>Name: </th>
-            <th>Age: </th>
-            <th>Action: </th>
+                <th>Name: </th>
+                <th>Age: </th>
+                <th>Action: </th>
             </tr>
         </thead>
         <tbody>
-            @foreach(var hamster in Model)
+            @foreach (var hamster in Model)
             {
                 <tr>
                     <td>@hamster.Name</td>
@@ -37,7 +37,7 @@ else
                     <td>
                         <a class="btn btn-primary" href="/hamsters/detail/@hamster.Id"><span class="oi oi-bell" aria-hidden="true"></span>Details</a>
                         <a class="btn btn-warning" href="/hamsters/update/@hamster.Id"><span class="oi oi-pencil" aria-hidden="true"></span>Edit</a>
-                        <a class="btn btn-danger" href="/hamsters/delete"><span class="oi oi-delete" aria-hidden="true"></span>Delete</a>
+                        <button class="btn btn-danger" @onclick=@(() => Delete(@hamster.Id))><span class="oi oi-delete" aria-hidden="true"></span>Delete</button>
                     </td>
                 </tr>
             }
@@ -47,7 +47,7 @@ else
 
 @code {
     private List<HamsterReadOnlyDto> Model;
-    private Response<List<HamsterReadOnlyDto>> response = new Response<List<HamsterReadOnlyDto>>{ Success = true };
+    private Response<List<HamsterReadOnlyDto>> response = new Response<List<HamsterReadOnlyDto>> { Success = true };
 
     protected override async Task OnInitializedAsync()
     {
@@ -55,6 +55,21 @@ else
         if (response.Success)
         {
             Model = response.Data;
+        }
+    }
+
+    private async Task Delete(int hamsterId)
+    {
+        var hamster = Model.First(u => u.Id == hamsterId);
+        var confirm = await jsRuntime.InvokeAsync<bool>("confirm", $"Are you sure you wish to delete {hamster.Name}?");
+        if (confirm)
+        {
+            var response = await hamsterService.DeleteHamster(hamsterId);
+            if (response.Success)
+            {
+                await jsRuntime.SweetAlertSuccess("Hamster Deleted");
+                await OnInitializedAsync();
+            }
         }
     }
 }
