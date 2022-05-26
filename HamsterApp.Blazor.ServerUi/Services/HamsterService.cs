@@ -1,4 +1,5 @@
-﻿using Blazored.LocalStorage;
+﻿using AutoMapper;
+using Blazored.LocalStorage;
 using HamsterApp.Blazor.ServerUi.Services.Base;
 
 namespace HamsterApp.Blazor.ServerUi.Services
@@ -6,9 +7,12 @@ namespace HamsterApp.Blazor.ServerUi.Services
     public class HamsterService : BaseHttpService, IHamsterService
     {
         private readonly IClient _client;
-        public HamsterService(IClient client, ILocalStorageService localStorage) : base(client, localStorage)
+        private readonly IMapper _mapper;
+
+        public HamsterService(IClient client, ILocalStorageService localStorage, IMapper mapper) : base(client, localStorage)
         {
             _client = client;
+            _mapper = mapper;
         }
 
         public async Task<Response<int>> CreateHamster(HamsterCreateDto hamster)
@@ -24,6 +28,48 @@ namespace HamsterApp.Blazor.ServerUi.Services
             {
 
                 response = ConvertApiExceptions<int>(ex);
+            }
+            return response;
+        }
+
+        public async Task<Response<HamsterUpdateDto>> GetHamsterForUpdate(int id)
+        {
+            Response<HamsterUpdateDto> response;
+
+            try
+            {
+                await GetBearerToken();
+                var data = await _client.HamstersGETAsync(id);
+                response = new Response<HamsterUpdateDto>
+                {
+                    Data = _mapper.Map<HamsterUpdateDto>(data),
+                    Success = true
+                };
+            }
+            catch (ApiException ex)
+            {
+                response = ConvertApiExceptions<HamsterUpdateDto>(ex);
+            }
+            return response;
+        }
+
+        public async Task<Response<HamsterReadOnlyDto>> GetHamster(int id)
+        {
+            Response<HamsterReadOnlyDto> response;
+
+            try
+            {
+                await GetBearerToken();
+                var data = await _client.HamstersGETAsync(id);
+                response = new Response<HamsterReadOnlyDto>
+                {
+                    Data = data,
+                    Success = true
+                };
+            }
+            catch (ApiException ex)
+            {
+                response = ConvertApiExceptions<HamsterReadOnlyDto>(ex);
             }
             return response;
         }
@@ -45,6 +91,23 @@ namespace HamsterApp.Blazor.ServerUi.Services
             catch (ApiException ex)
             {
                 response = ConvertApiExceptions<List<HamsterReadOnlyDto>>(ex);
+            }
+            return response;
+        }
+
+        public async Task<Response<int>> UpdateHamster(int id, HamsterUpdateDto hamster)
+        {
+            Response<int> response = new Response<int> { Success = true };
+
+            try
+            {
+                await GetBearerToken();
+                await _client.HamstersPUTAsync(id, hamster);
+            }
+            catch (ApiException ex)
+            {
+
+                response = ConvertApiExceptions<int>(ex);
             }
             return response;
         }

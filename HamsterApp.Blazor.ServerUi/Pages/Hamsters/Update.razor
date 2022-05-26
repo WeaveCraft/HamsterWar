@@ -1,11 +1,11 @@
-﻿@page "/hamsters/create/"
+﻿@page "/hamsters/update/{Id:int}"
 @inject IHamsterService hamsterService
 @inject NavigationManager navManager
 @inject IFileUpload fileUpload
 @inject IJSRuntime jsRuntime
 
-<h3>Create New Hamster</h3>
-<EditForm Model="Hamster" OnValidSubmit="HandleCreateHamster">
+<h3>Update Hamster</h3>
+<EditForm Model="Hamster" OnValidSubmit="HandleUpdateHamster">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -44,7 +44,7 @@
     </div>
      <button class="btn btn-primary" type="submit">
         <span class="oi oi-pencil"></span>
-        Create Hamster
+        Update Hamster
     </button>
     <button @onclick="BackToList" class="btn btn-outline-secondary">
         <span class="oi oi-media-skip-backward"></span>
@@ -54,14 +54,22 @@
 </EditForm>
 
 @code {
-    private HamsterCreateDto Hamster = new HamsterCreateDto()
-    {
-        ImgName = "/images/default.jpg"
-    };
+    [Parameter]
+    public int Id { get; set; }
+    private HamsterUpdateDto Hamster = new HamsterUpdateDto();
 
-    private async Task HandleCreateHamster()
+    protected async override Task OnInitializedAsync()
     {
-        var response = await hamsterService.CreateHamster(Hamster);
+        var response = await hamsterService.GetHamsterForUpdate(Id);
+        if (response.Success)
+        {
+            Hamster = response.Data;
+        }
+    }
+
+    private async Task HandleUpdateHamster()
+    {
+        var response = await hamsterService.UpdateHamster(Id, Hamster);
         if (response.Success)
         {
             BackToList();

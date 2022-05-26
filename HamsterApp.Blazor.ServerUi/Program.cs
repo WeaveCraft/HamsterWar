@@ -6,6 +6,7 @@ using HamsterApp.Blazor.ServerUi.LoadImage;
 using HamsterApp.Blazor.ServerUi.LoadImage.ILoadImage;
 using Microsoft.AspNetCore.Components.Authorization;
 using HamsterApp.Blazor.ServerUi.Services;
+using HamsterApp.Blazor.ServerUi.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ builder.Services.AddScoped<ApiAuthenticationStateProvider>();
 builder.Services.AddScoped<AuthenticationStateProvider>(p =>
                 p.GetRequiredService<ApiAuthenticationStateProvider>());
 builder.Services.AddScoped<IHamsterService, HamsterService>();
+
+builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 builder.Services.AddScoped<IFileUpload, FileUpload>();
 
