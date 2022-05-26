@@ -1,0 +1,72 @@
+﻿@page "/hamsters/detail/{Id:int}"
+@inject IHamsterService hamsterService
+@inject NavigationManager navManager
+
+<h3>Hamster Details</h3>
+<EditForm Model="Hamster">
+    <fieldset disabled="true">
+        <div class="form-group col-6">
+            <label for="name">Name</label>
+            <InputText @bind-Value="Hamster.Name" class="form-control" id="name" />
+            <ValidationMessage For="@(() => Hamster.Name)" />
+        </div>
+        <br />
+        <div class="form-group col-6">
+            <label for="age">Age</label>
+            <InputNumber @bind-Value="Hamster.Age" class="form-control" id="age" />
+            <ValidationMessage For="@(() => Hamster.Age)" />
+        </div>
+        <br />
+        <div class="form-group col-6">
+            <label for="favfood">Favorite Food</label>
+            <InputTextArea @bind-Value="Hamster.FavFood" class="form-control" id="favfood" />
+            <ValidationMessage For="@(() => Hamster.FavFood)" />
+        </div>
+        <br />
+        <div class="form-group col-6">
+            <label for="loves">Loves</label>
+            <InputTextArea @bind-Value="Hamster.Loves" class="form-control" id="loves" />
+            <ValidationMessage For="@(() => Hamster.Loves)" />
+        </div>
+        <br />
+        <br />
+        <div class="col-md-2">
+            <img src="@Hamster.ImgName" class="w-100" />
+        </div>
+    </fieldset>
+
+    <button @onclick="GoToUpdate" class="btn btn-warning">
+        <span class="oi oi-pencil"></span>
+        Edit Hamster
+    </button>
+
+    <button @onclick="BackToList" class="btn btn-outline-secondary">
+        <span class="oi oi-media-skip-backward"></span>
+        Back To List
+    </button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    private HamsterReadOnlyDto Hamster = new HamsterReadOnlyDto();
+
+    protected async override Task OnInitializedAsync()
+    {
+        var response = await hamsterService.GetHamster(Id);
+        if (response.Success)
+        {
+            Hamster = response.Data;
+        }
+    }
+
+    private void BackToList()
+    {
+        navManager.NavigateTo("/hamsters/");
+    }
+
+    private void GoToUpdate()
+    {
+        navManager.NavigateTo($"/hamsters/update/{Hamster.Id}");
+    }
+}
