@@ -1,3 +1,3 @@
 # HamsterWar
 
-School Project RESTI API
+School Project REST API with Blazor Web
