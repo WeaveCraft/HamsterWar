@@ -1,1 +1,12 @@
 https://github.com/RicoSuter/NSwag/wiki/NSwagStudio -> NSwagStudio for keeping up with API changes easier
+
+Login User Information
+Admin has all access.
+Username: Admin@hamsters.com
+Password: Admin123!
+
+User does not have access for edit, delete and create.
+Username: User@hamsters.se
+Password: User123!
+
+TODO: Validation for /hamsters CRUD
