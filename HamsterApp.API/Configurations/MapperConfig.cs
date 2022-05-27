@@ -12,7 +12,7 @@ namespace HamsterApp.API.Configurations
             CreateMap<HamsterCreateDto, Hamster>().ReverseMap();
             CreateMap<HamsterUpdateDto, Hamster>().ReverseMap();
             CreateMap<HamsterReadOnlyDto, Hamster>().ReverseMap();
-            CreateMap<HamsterReadOnlyDto, Hamster>().ReverseMap();
+            CreateMap<HamsterDetailsDto, Hamster>().ReverseMap();
 
             CreateMap<MatchCreateDto, Match>().ReverseMap();
             CreateMap<MatchUpdateDto, Match>().ReverseMap();

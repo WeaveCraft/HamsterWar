@@ -68,13 +68,13 @@ namespace HamsterApp.API.Controllers
             }
         }
         [HttpGet("GetTwoRandom")]
-        public async Task<ActionResult<IEnumerable<HamsterReadOnlyDto>>> GetTwoRandomHamsters()
+        public async Task<ActionResult<IEnumerable<HamsterDetailsDto>>> GetTwoRandomHamsters()
         {
             try
             {
                 var hamsters = await _context.Hamsters.ToListAsync();
                 hamsters = await _context.Hamsters.OrderBy(h => Guid.NewGuid()).Take(2).ToListAsync();
-                var hamstersDto = _mapper.Map<IEnumerable<HamsterReadOnlyDto>>(hamsters);
+                var hamstersDto = _mapper.Map<IEnumerable<HamsterDetailsDto>>(hamsters);
                 return Ok(hamstersDto);
             }
             catch (Exception ex)
@@ -84,13 +84,13 @@ namespace HamsterApp.API.Controllers
             }
         }
         [HttpGet("GetOneRandom")]
-        public async Task<ActionResult<IEnumerable<HamsterReadOnlyDto>>> GetRandomHamster()
+        public async Task<ActionResult<IEnumerable<HamsterDetailsDto>>> GetRandomHamster()
         {
             try
             {
                 var hamsters = await _context.Hamsters.ToListAsync();
                 hamsters = await _context.Hamsters.OrderBy(h => Guid.NewGuid()).Take(1).ToListAsync();
-                var hamstersDto = _mapper.Map<IEnumerable<HamsterReadOnlyDto>>(hamsters);
+                var hamstersDto = _mapper.Map<IEnumerable<HamsterDetailsDto>>(hamsters);
                 return Ok(hamstersDto);
             }
             catch (Exception ex)

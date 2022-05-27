@@ -1,6 +1,6 @@
 ﻿namespace HamsterApp.Entities.DTO.Hamster
 {
-    public class HamsterReadOnlyDto
+    public class HamsterReadOnlyDto : BaseDto
     {
         public string Name { get; set; }
         public int Age { get; set; }
