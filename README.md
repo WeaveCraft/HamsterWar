@@ -5,6 +5,7 @@ School Project REST API with Blazor Web
 Inledning
 
 Bakgrund
+
 Din uppgift är att bygga en fullstack lösning för kommande virala sensationen, webbplatsen HAMSTERWARS.
 Webbplatsen är en spinoff på Kittenwar, en hemsida där matcher mellan två kattungar (bilder) slumpas fram
 och besökarna röstar på den de finner gulligast. Poäng ska räknas, listor ska sammanställas.
