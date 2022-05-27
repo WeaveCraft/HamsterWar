@@ -1,4 +1,10 @@
-https://github.com/RicoSuter/NSwag/wiki/NSwagStudio -> NSwagStudio for keeping up with API changes easier
+https://github.com/RicoSuter/NSwag/wiki/NSwagStudio -> NSwagStudio for keeping up with API changes easier.
+
+https://github.com/CodeSeven/toastr -> For update notifications for front-end
+https://sweetalert2.github.io/ -> for update notifications for front-end
+
+https://bootswatch.com/ -> for front-end UI using bootstrap. 
+CSS code can be found under HamsterApp.Blazor.ServerUI/wwwroot/css/bootswatch_cyborg.css
 
 Login User Information
 Admin has all access.
