@@ -1,10 +1,75 @@
-﻿@page "/battles/"
-@page "/battles/{id:int}"
+﻿@page "/battle/"
 @inject IHamsterService hamsterService
 @inject IJSRuntime jsRuntime
+<h3>Hamster Battle</h3>
 
-<h3>Index</h3>
+@if (response.Success == false)
+{
+    <div class="alert alert-danger">
+        <h4>Loading Data...</h4>
+    </div>
+}
+
+@if (Model == null)
+{
+    <div class="alert alert-info">
+        <h4>@response.Message</h4>
+    </div>
+}
+else
+{
+    <div class="row container pb-3 backgroundWhite">
+        <div class="col-12">
+            <div class="row my-3">
+                @foreach (var hamster in Model)
+                {
+                    <div class="col-lg-4 col-md-6 pb-4 filter">
+                        <div class="card bg-white rounded shadow-sm" style="border:1px solid #222">
+                            <div class="card-body pb-1 row">
+                                <div class="col-8 h5">@hamster.Name</div>
+                                <div class="col-4 text-end"><span class="text-info h4">Age: @hamster.Age</span></div>
+                            </div>
+                            <img class="card-img-top img-fluid d-block mx-auto mb-3" src="@hamster.ImgName" alt="menuitem image">
+                            <div class="card-body p-1 px-3 row">
+                                <div class="col-6">
+                                    <span class="badge p-2 border w-100 text-white bg-info ">Favorite Food: @hamster.FavFood</span>
+                                </div>
+                                <div class="col-6 border-0">
+                                    <span class="badge p-2 border w-100 text-white bg-info ">Loves: @hamster.Loves</span>
+                                </div>
+
+                                <div class="col-12 pt-2" style="font-size:13px; text-align:center">
+                                    <p>Total Games Played: @hamster.Games</p>
+                                </div>
+
+                                <div class="col-6 border-0">
+                                    <span class="badge p-2 border w-100 bg-success">Wins: @hamster.Wins</span>
+                                </div>
+                                <div class="col-6 border-0">
+                                    <span class="badge p-2 border w-100 bg-danger ">Losses: @hamster.Losses</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                }
+            </div>
+        </div>
+    </div>
+}
 
 @code {
-    
+    private List<HamsterDetailsDto> Model;
+    private Response<List<HamsterDetailsDto>> response = new Response<List<HamsterDetailsDto>> { Success = true };
+
+    protected override async Task OnInitializedAsync()
+    {
+        response = await hamsterService.GetTwoHamsters();
+        if (response.Success)
+        {
+            Model = response.Data;
+        }
+    }
 }
