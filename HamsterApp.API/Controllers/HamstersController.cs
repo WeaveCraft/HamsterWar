@@ -17,6 +17,8 @@ namespace HamsterApp.API.Controllers
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
         private readonly ILogger<HamstersController> _logger;
+        public List<Hamster> Hamsters { get; set; } = new List<Hamster>();
+
 
         public HamstersController(ApplicationDbContext context, IMapper mapper, ILogger<HamstersController> logger)
         {
@@ -64,6 +66,20 @@ namespace HamsterApp.API.Controllers
                 _logger.LogError(ex, $"Error performing GET in {nameof(GetHamsters)}");
                 return StatusCode(500, Messages.Error500Message);
             }
+        }
+        [HttpGet("GetRandom")]
+        public async Task<ActionResult<HamsterReadOnlyDto>> GetRandomHamster()
+        {
+            try
+            {
+                Hamsters = await _context.Hamsters.OrderBy(h => Guid.NewGuid()).Take(2).ToListAsync();
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, $"Error Performing GET(GetRandom) in {nameof(PostHamster)}", Hamsters);
+                return StatusCode(500, Messages.Error500Message);
+            }
+            return Ok(Hamsters);
         }
 
         // PUT: api/Hamsters/5
