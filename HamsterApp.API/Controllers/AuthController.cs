@@ -2,7 +2,6 @@
 using HamsterApp.API.Static;
 using HamsterApp.Entities.DTO.User;
 using HamsterApp.Entities.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;

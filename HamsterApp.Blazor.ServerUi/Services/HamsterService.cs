@@ -94,6 +94,26 @@ namespace HamsterApp.Blazor.ServerUi.Services
             }
             return response;
         }
+        //public async Task<Response<List<HamsterReadOnlyDto>>> GetTwoHamsters()
+        //{
+        //    Response<List<HamsterReadOnlyDto>> response;
+
+        //    //try
+        //    //{
+        //    //    await GetBearerToken();
+        //    //    var data = await _client.GetRandomAsync();
+        //    //    response = new Response<List<HamsterReadOnlyDto>>
+        //    //    {
+        //    //        Data = data.ToList(),
+        //    //        Success = true
+        //    //    };
+        //    //}
+        //    //catch (ApiException ex)
+        //    //{
+        //    //    response = ConvertApiExceptions<List<HamsterReadOnlyDto>>(ex);
+        //    //}
+        //    //return response;
+        //}
 
         public async Task<Response<int>> UpdateHamster(int id, HamsterUpdateDto hamster)
         {

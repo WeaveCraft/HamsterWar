@@ -33,9 +33,9 @@ namespace HamsterApp.API.Controllers
         {
             try
             {
-                var authors = await _context.Hamsters.ToListAsync();
-                var authorDtos = _mapper.Map<IEnumerable<HamsterReadOnlyDto>>(authors);
-                return Ok(authorDtos);
+                var hamsters = await _context.Hamsters.ToListAsync();
+                var hamstersDto = _mapper.Map<List<HamsterReadOnlyDto>>(hamsters);
+                return Ok(hamstersDto);
             }
             catch (Exception ex)
             {
@@ -67,19 +67,37 @@ namespace HamsterApp.API.Controllers
                 return StatusCode(500, Messages.Error500Message);
             }
         }
-        [HttpGet("GetRandom")]
-        public async Task<ActionResult<HamsterReadOnlyDto>> GetRandomHamster()
+        [HttpGet("GetTwoRandom")]
+        public async Task<ActionResult<IEnumerable<HamsterReadOnlyDto>>> GetTwoRandomHamsters()
         {
             try
             {
-                Hamsters = await _context.Hamsters.OrderBy(h => Guid.NewGuid()).Take(2).ToListAsync();
+                var hamsters = await _context.Hamsters.ToListAsync();
+                hamsters = await _context.Hamsters.OrderBy(h => Guid.NewGuid()).Take(2).ToListAsync();
+                var hamstersDto = _mapper.Map<IEnumerable<HamsterReadOnlyDto>>(hamsters);
+                return Ok(hamstersDto);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                _logger.LogError(ex, $"Error Performing GET(GetRandom) in {nameof(PostHamster)}", Hamsters);
+                _logger.LogError(ex, $"Error Performing GET(GetTwoRandom) in {nameof(PostHamster)}");
                 return StatusCode(500, Messages.Error500Message);
             }
-            return Ok(Hamsters);
+        }
+        [HttpGet("GetOneRandom")]
+        public async Task<ActionResult<IEnumerable<HamsterReadOnlyDto>>> GetRandomHamster()
+        {
+            try
+            {
+                var hamsters = await _context.Hamsters.ToListAsync();
+                hamsters = await _context.Hamsters.OrderBy(h => Guid.NewGuid()).Take(1).ToListAsync();
+                var hamstersDto = _mapper.Map<IEnumerable<HamsterReadOnlyDto>>(hamsters);
+                return Ok(hamstersDto);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error Performing GET(GetOneRandom) in {nameof(PostHamster)}");
+                return StatusCode(500, Messages.Error500Message);
+            }
         }
 
         // PUT: api/Hamsters/5
