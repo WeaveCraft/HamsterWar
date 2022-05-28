@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HamsterApp.DataAccess.Migrations
 {
-    public partial class FirstMigrationToDB : Migration
+    public partial class AddedMigrationsToDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -202,8 +202,8 @@ namespace HamsterApp.DataAccess.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "3845d87b-b230-41ff-a1a7-84bbd7ec821d", "51cabc8d-4943-48de-9870-373335453181", "User", "USER" },
-                    { "985f4930-21ad-4249-abaf-e4251b1553d9", "2807dd19-617f-49f4-97a7-f9d63bf6e476", "Admin", "ADMIN" }
+                    { "3845d87b-b230-41ff-a1a7-84bbd7ec821d", "5fa80517-4c06-433f-9d9f-72a5d3e21977", "User", "USER" },
+                    { "985f4930-21ad-4249-abaf-e4251b1553d9", "2ec9a09b-8429-4997-898d-2c929b965197", "Admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(
@@ -211,9 +211,64 @@ namespace HamsterApp.DataAccess.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "087f2124-f507-4642-a8f7-84442abb3d70", 0, "d1a45b0d-5026-4d69-84e8-5a59af5977d0", "user@hamsters.com", false, "System", "User", false, null, "USER@HAMSTERS.COM", "USER@HAMSTERS.COM", "AQAAAAEAACcQAAAAEBqe0da5byladRyMOF7rhsrXDmBKNiwhPnpxqpJSqBueyHPUQ5B0nUFdrY2j8XAuBw==", null, false, "168fd148-c52b-4ee6-ac1c-e6fff907d918", false, "user@hamsters.com" },
-                    { "e7eabebd-e10c-4da9-b6aa-2db9cad6b84d", 0, "8b7904fd-8ae3-4d69-a614-98c74b36fe71", "admin@hamsters.com", false, "System", "Admin", false, null, "ADMIN@HAMSTERS.COM", "ADMIN@HAMSTERS.COM", "AQAAAAEAACcQAAAAEFfrj0dI8O37MZAmqJRQ5+jCQl+G9Ru8AapVxi2iKQKzjZAWnLFSpkVTyAbvcEURZw==", null, false, "e63566b1-b956-49cb-9a2d-f0a5e2fe6551", false, "admin@hamsters.com" }
+                    { "087f2124-f507-4642-a8f7-84442abb3d70", 0, "34e0d63b-058f-401d-9d54-2bbffce3e02a", "user@hamsters.com", false, "System", "User", false, null, "USER@HAMSTERS.COM", "USER@HAMSTERS.COM", "AQAAAAEAACcQAAAAEFj6zRblMy91GC/G4s9k6XazmfwhRMYXMdL/UkbFFPxYeTWPRR1hkgsFuo5iORmP1w==", null, false, "1696bbcd-3750-48db-9d0d-da7eb685b350", false, "user@hamsters.com" },
+                    { "e7eabebd-e10c-4da9-b6aa-2db9cad6b84d", 0, "4dec43e0-5cec-457c-9f8b-e61c000db162", "admin@hamsters.com", false, "System", "Admin", false, null, "ADMIN@HAMSTERS.COM", "ADMIN@HAMSTERS.COM", "AQAAAAEAACcQAAAAEPBf3rFezVIgC/4PJCIxF4Ert9Ou+c3Awvc0UH8vH3Me7+eotpZ/nZTOVuxaTtAtBA==", null, false, "2266e292-e0b7-45f1-9a37-3dfbdcb1aed8", false, "admin@hamsters.com" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Hamsters",
+                columns: new[] { "Id", "Age", "FavFood", "Games", "ImgName", "Losses", "Loves", "Name", "Wins" },
+                values: new object[,]
+                {
+                    { 1, 2, "Eating1", 0, "/images/hamster-1.jpg", 0, "Losing1", "Hamster1", 0 },
+                    { 2, 3, "Eating2", 0, "/images/hamster-2.jpg", 0, "Losing2", "Hamster2", 0 },
+                    { 3, 2, "Eating3", 0, "/images/hamster-3.jpg", 0, "Losing3", "Hamster3", 0 },
+                    { 4, 1, "Eating4", 0, "/images/hamster-4.jpg", 0, "Losing4", "Hamster4", 0 },
+                    { 5, 2, "Eating5", 0, "/images/hamster-5.jpg", 0, "Losing5", "Hamster5", 0 },
+                    { 6, 2, "Eating6", 0, "/images/hamster-6.jpg", 0, "Losing6", "Hamster6", 0 },
+                    { 7, 3, "Eating7", 0, "/images/hamster-7.jpg", 0, "Losing7", "Hamster7", 0 },
+                    { 8, 2, "Eating8", 0, "/images/hamster-8.jpg", 0, "Losing8", "Hamster8", 0 },
+                    { 9, 1, "Eating9", 0, "/images/hamster-9.jpg", 0, "Losing9", "Hamster9", 0 },
+                    { 10, 2, "Eating10", 0, "/images/hamster-10.jpg", 0, "Losing10", "Hamster10", 0 },
+                    { 11, 3, "Eating11", 0, "/images/hamster-11.jpg", 0, "Losing11", "Hamster11", 0 },
+                    { 12, 2, "Eating12", 0, "/images/hamster-12.jpg", 0, "Losing12", "Hamster12", 0 },
+                    { 13, 3, "Eating13", 0, "/images/hamster-13.jpg", 0, "Losing13", "Hamster13", 0 },
+                    { 14, 1, "Eating14", 0, "/images/hamster-14.jpg", 0, "Losing14", "Hamster14", 0 },
+                    { 15, 1, "Eating15", 0, "/images/hamster-15.jpg", 0, "Losing15", "Hamster15", 0 },
+                    { 16, 1, "Eating16", 0, "/images/hamster-16.jpg", 0, "Losing16", "Hamster16", 0 },
+                    { 17, 1, "Eating17", 0, "/images/hamster-17.jpg", 0, "Losing17", "Hamster17", 0 },
+                    { 18, 1, "Eating18", 0, "/images/hamster-18.jpg", 0, "Losing18", "Hamster18", 0 },
+                    { 19, 1, "Eating19", 0, "/images/hamster-19.jpg", 0, "Losing19", "Hamster19", 0 },
+                    { 20, 1, "Eating20", 0, "/images/hamster-20.jpg", 0, "Losing20", "Hamster20", 0 },
+                    { 21, 1, "Eating21", 0, "/images/hamster-21.jpg", 0, "Losing21", "Hamster21", 0 },
+                    { 22, 1, "Eating22", 0, "/images/hamster-22.jpg", 0, "Losing22", "Hamster22", 0 },
+                    { 23, 1, "Eating23", 0, "/images/hamster-23.jpg", 0, "Losing23", "Hamster23", 0 },
+                    { 24, 3, "Eating24", 0, "/images/hamster-24.jpg", 0, "Losing24", "Hamster24", 0 },
+                    { 25, 1, "Eating25", 0, "/images/hamster-25.jpg", 0, "Losing25", "Hamster25", 0 },
+                    { 26, 1, "Eating26", 0, "/images/hamster-26.jpg", 0, "Losing26", "Hamster26", 0 },
+                    { 27, 1, "Eating27", 0, "/images/hamster-27.jpg", 0, "Losing27", "Hamster27", 0 },
+                    { 28, 1, "Eating28", 0, "/images/hamster-28.jpg", 0, "Losing28", "Hamster28", 0 },
+                    { 29, 1, "Eating29", 0, "/images/hamster-29.jpg", 0, "Losing29", "Hamster29", 0 },
+                    { 30, 1, "Eating30", 0, "/images/hamster-30.jpg", 0, "Losing30", "Hamster30", 0 },
+                    { 31, 1, "Eating31", 0, "/images/hamster-31.jpg", 0, "Losing31", "Hamster31", 0 },
+                    { 32, 1, "Eating32", 0, "/images/hamster-32.jpg", 0, "Losing32", "Hamster32", 0 },
+                    { 33, 1, "Eating33", 0, "/images/hamster-33.jpg", 0, "Losing33", "Hamster33", 0 },
+                    { 34, 1, "Eating34", 0, "/images/hamster-34.jpg", 0, "Losing34", "Hamster34", 0 },
+                    { 35, 3, "Eating35", 0, "/images/hamster-35.jpg", 0, "Losing35", "Hamster35", 0 },
+                    { 36, 2, "Eating36", 0, "/images/hamster-36.jpg", 0, "Losing36", "Hamster36", 0 },
+                    { 37, 3, "Eating37", 0, "/images/hamster-37.jpg", 0, "Losing37", "Hamster37", 0 },
+                    { 38, 1, "Eating38", 0, "/images/hamster-38.jpg", 0, "Losing38", "Hamster38", 0 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Hamsters",
+                columns: new[] { "Id", "Age", "FavFood", "Games", "ImgName", "Losses", "Loves", "Name", "Wins" },
+                values: new object[] { 39, 1, "Eating39", 0, "/images/hamster-39.jpg", 0, "Losing39", "Hamster39", 0 });
+
+            migrationBuilder.InsertData(
+                table: "Hamsters",
+                columns: new[] { "Id", "Age", "FavFood", "Games", "ImgName", "Losses", "Loves", "Name", "Wins" },
+                values: new object[] { 40, 3, "Eating40", 0, "/images/hamster-40.jpg", 0, "Losing40", "Hamster40", 0 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

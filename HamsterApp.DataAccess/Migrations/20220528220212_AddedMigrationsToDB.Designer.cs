@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HamsterApp.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220526221717_AddedPicturesURLToHamsters")]
-    partial class AddedPicturesURLToHamsters
+    [Migration("20220528220212_AddedMigrationsToDB")]
+    partial class AddedMigrationsToDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -101,7 +101,7 @@ namespace HamsterApp.DataAccess.Migrations
                         {
                             Id = "e7eabebd-e10c-4da9-b6aa-2db9cad6b84d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4e59b9f3-cfb0-4189-bc41-11f48f102991",
+                            ConcurrencyStamp = "4dec43e0-5cec-457c-9f8b-e61c000db162",
                             Email = "admin@hamsters.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -109,9 +109,9 @@ namespace HamsterApp.DataAccess.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@HAMSTERS.COM",
                             NormalizedUserName = "ADMIN@HAMSTERS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPNGtl2AjjKJs97nkpnwnJeofog734TiCu0tThcExqakwwmNzBJbkW2+Uvmkke8UMg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPBf3rFezVIgC/4PJCIxF4Ert9Ou+c3Awvc0UH8vH3Me7+eotpZ/nZTOVuxaTtAtBA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9a072d4b-60e0-497f-9ba5-bdb01ee3403b",
+                            SecurityStamp = "2266e292-e0b7-45f1-9a37-3dfbdcb1aed8",
                             TwoFactorEnabled = false,
                             UserName = "admin@hamsters.com"
                         },
@@ -119,7 +119,7 @@ namespace HamsterApp.DataAccess.Migrations
                         {
                             Id = "087f2124-f507-4642-a8f7-84442abb3d70",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "78f1eba4-07d0-4c27-ab2d-2c2a3fefc57d",
+                            ConcurrencyStamp = "34e0d63b-058f-401d-9d54-2bbffce3e02a",
                             Email = "user@hamsters.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -127,9 +127,9 @@ namespace HamsterApp.DataAccess.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@HAMSTERS.COM",
                             NormalizedUserName = "USER@HAMSTERS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAECqf1+OGkv6j3FAr1Qqx8GRmxl6zjBecD671JO/yhKRm+htrP/sEwECuftGU6c+b7g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFj6zRblMy91GC/G4s9k6XazmfwhRMYXMdL/UkbFFPxYeTWPRR1hkgsFuo5iORmP1w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "77763387-c4e7-4520-afb1-54f0f57cf18c",
+                            SecurityStamp = "1696bbcd-3750-48db-9d0d-da7eb685b350",
                             TwoFactorEnabled = false,
                             UserName = "user@hamsters.com"
                         });
@@ -708,14 +708,14 @@ namespace HamsterApp.DataAccess.Migrations
                         new
                         {
                             Id = "3845d87b-b230-41ff-a1a7-84bbd7ec821d",
-                            ConcurrencyStamp = "13687be7-fdeb-4ae4-9c44-9ddf23ff77c8",
+                            ConcurrencyStamp = "5fa80517-4c06-433f-9d9f-72a5d3e21977",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = "985f4930-21ad-4249-abaf-e4251b1553d9",
-                            ConcurrencyStamp = "dc0d1841-2546-4978-9269-480327589095",
+                            ConcurrencyStamp = "2ec9a09b-8429-4997-898d-2c929b965197",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
