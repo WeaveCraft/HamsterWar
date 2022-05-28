@@ -1,5 +1,6 @@
 using HamsterApp.API.Configurations;
 using HamsterApp.API.Data;
+using HamsterApp.API.DbInitializer;
 using HamsterApp.Entities.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
