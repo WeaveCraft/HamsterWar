@@ -1,9 +1,80 @@
 ﻿@page "/"
+@inject NavigationManager navManager
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Hamster War</h1>
+<p>Please click image to goto corresponding page.</p>
+@if (response.Success == false)
+{
+    <div class="alert alert-danger">
+        <h4>Loading Data...</h4>
+    </div>
+}
+else
+{
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="/images/hamster_battle.webp" class="mw-100" alt="..." @onclick="(GoToBattle)">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Battle</h5>
+                    <p class="card-text">This is where you can play the game. You choose the hamster that you think is the cutest.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-Welcome to your new app.
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="/images/hamster_gallery.webp" class="card-img" alt="..." @onclick="(GoToGallery)">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Gallery</h5>
+                    <p class="card-text">This is where you can find all the hamsters that currently are competing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="/images/hamster_history.jpg" class="card-img" alt="..." @onclick="(GoToHistory)">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">History</h5>
+                    <p class="card-text">This is where you can find the history of all the battles between all the hamsters.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="/images/hamster_stat.jpg" class="card-img" alt="..." @onclick="(GoToStatistic)">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Statistics</h5>
+                    <p class="card-text">This is where you can see the top 5 winning hamsters and also the top 5 losing hamsters.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private Response<List<HamsterDetailsDto>> response = new Response<List<HamsterDetailsDto>> { Success = true };
+
+    private void GoToGallery() => navManager.NavigateTo("/hamsters/");
+    private void GoToBattle() => navManager.NavigateTo("/battle/");
+    private void GoToHistory() => navManager.NavigateTo("/statistic/");
+    private void GoToStatistic() => navManager.NavigateTo("/history/");
+}
