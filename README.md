@@ -1,6 +1,6 @@
 # HamsterWar
 
-School Project REST API with Blazor Web
+School Project REST API with Blazor Web.
 
 
 
