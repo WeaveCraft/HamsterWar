@@ -8,6 +8,7 @@ namespace HamsterApp.Entities.DTO.Hamster
 {
     public class HamsterDetailsDto
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
         public string FavFood { get; set; }

@@ -53,6 +53,7 @@ namespace HamsterApp.Blazor.ServerUi.Services
             return response;
         }
 
+
         public async Task<Response<HamsterReadOnlyDto>> GetHamster(int id)
         {
             Response<HamsterReadOnlyDto> response;
@@ -148,5 +149,28 @@ namespace HamsterApp.Blazor.ServerUi.Services
             }
             return response;
         }
+
+        public async Task<Response<List<HamsterDetailsDto>>> GetOneHamsters()
+        {
+            Response<List<HamsterDetailsDto>> response;
+
+            try
+            {
+                await GetBearerToken();
+                var data = await _client.GetOneRandomAsync();
+                response = new Response<List<HamsterDetailsDto>>
+                {
+                    Data = data.ToList(),
+                    Success = true
+                };
+            }
+            catch (ApiException ex)
+            {
+                response = ConvertApiExceptions<List<HamsterDetailsDto>>(ex);
+            }
+            return response;
+        }
+
+
     }
 }

@@ -6,6 +6,7 @@ namespace HamsterApp.Blazor.ServerUi.Services
     {
         Task<Response<List<HamsterReadOnlyDto>>> GetHamsters();
         Task<Response<List<HamsterDetailsDto>>> GetTwoHamsters();
+        Task<Response<List<HamsterDetailsDto>>> GetOneHamsters();
         Task<Response<HamsterReadOnlyDto>> GetHamster(int id);
         Task<Response<HamsterUpdateDto>> GetHamsterForUpdate(int id);
         Task<Response<int>> CreateHamster(HamsterCreateDto hamster);

@@ -1,6 +1,7 @@
 using HamsterApp.API.Configurations;
 using HamsterApp.API.Data;
 using HamsterApp.API.DbInitializer;
+using HamsterApp.API.Repo;
 using HamsterApp.Entities.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -20,6 +21,8 @@ builder.Services.AddIdentityCore<ApiUser>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddAutoMapper(typeof(MapperConfig));
+
+builder.Services.AddScoped<IHamsterRepository, HamsterRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

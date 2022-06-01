@@ -1406,6 +1406,9 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.16.0.0 (NJsonSchema v10.7.1.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class HamsterDetailsDto
     {
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int Id { get; set; }
+
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
 
@@ -1492,6 +1495,15 @@ namespace HamsterApp.Blazor.ServerUi.Services.Base
         [Newtonsoft.Json.JsonProperty("imgName", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string ImgName { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("wins", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Wins { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("losses", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Losses { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("games", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Games { get; set; }
 
     }
 
