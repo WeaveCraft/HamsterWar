@@ -40,15 +40,9 @@ else
                                     </div>
 
                                     <div class="col-12 pt-2" style="font-size:13px; text-align:center">
-                                        <p>Total Games Played: @hamster.Games</p>
+                                        <p>Click Hamster Image To vote</p>
                                     </div>
 
-                                    <div class="col-6 border-0">
-                                        <span class="badge p-2 border w-100 bg-success">Wins: @hamster.Wins</span>
-                                    </div>
-                                    <div class="col-6 border-0">
-                                        <span class="badge p-2 border w-100 bg-danger ">Losses: @hamster.Losses</span>
-                                    </div>
                                 </div>
 
                             </div>
@@ -70,15 +64,9 @@ else
                                     </div>
 
                                     <div class="col-12 pt-2" style="font-size:13px; text-align:center">
-                                        <p>Total Games Played: @hamster2.Games</p>
+                                        <p>Click Hamster Image To Vote</p>
                                     </div>
 
-                                    <div class="col-6 border-0">
-                                        <span class="badge p-2 border w-100 bg-success">Wins: @hamster2.Wins</span>
-                                    </div>
-                                    <div class="col-6 border-0">
-                                        <span class="badge p-2 border w-100 bg-danger ">Losses: @hamster2.Losses</span>
-                                    </div>
                                 </div>
 
                             </div>
@@ -119,7 +107,7 @@ else
             var response = await hamsterService.Wins(hamsterId);
             if (response.Success)
             {
-                //await jsRuntime.SweetAlertSuccess($"{hamsterId} is the Cutest");
+                await jsRuntime.SweetAlertSuccess($"{hamster.Name} is the Cutest");
                 await OnInitializedAsync();
             }
         }
@@ -133,7 +121,7 @@ else
             var response = await hamsterService.Wins(hamsterId);
             if (response.Success)
             {
-                //await jsRuntime.SweetAlertSuccess($"{hamsterId} is the Cutest");
+                await jsRuntime.SweetAlertSuccess($"{hamster.Name} is the Cutest");
                 await OnInitializedAsync();
             }
         }
@@ -144,7 +132,6 @@ else
         var response = await hamsterService.Losses(id);
         if (response.Success)
         {
-            //await jsRuntime.SweetAlertSuccess($"{hamsterId} is the Cutest");
             await OnInitializedAsync();
         }
     }
@@ -154,7 +141,6 @@ else
         var response = await hamsterService.Losses(id);
         if (response.Success)
         {
-            //await jsRuntime.SweetAlertSuccess($"{hamsterId} is the Cutest");
             await OnInitializedAsync();
         }
     }
