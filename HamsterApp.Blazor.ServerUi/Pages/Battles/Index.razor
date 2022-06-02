@@ -30,7 +30,7 @@ else
                                 <div class="col-8 h5">@hamster.Name</div>
                                 <div class="col-4 text-end"><span class="text-info h4">Age: @hamster.Age</span></div>
                             </div>
-                            <button @onclick=@(e => { IncrementPoints(hamster.Id); DecrementPoints(hamster2.Id); })> <img class="card-img-top img-fluid d-block mx-auto mb-3" src="@hamster.ImgName" alt="@hamster.Name"> </button>
+                            <button @onclick=@(e => { Win1(hamster.Id); Lose1(hamster2.Id); })> <img class="card-img-top img-fluid d-block mx-auto mb-3" src="@hamster.ImgName" alt="@hamster.Name"> </button>
                             <div class="card-body p-1 px-3 row">
                                 <div class="col-6">
                                     <span class="badge p-2 border w-100 text-white bg-info ">Favorite Food: @hamster.FavFood</span>
@@ -60,7 +60,7 @@ else
                                     <div class="col-8 h5">@hamster2.Name</div>
                                     <div class="col-4 text-end"><span class="text-info h4">Age: @hamster2.Age</span></div>
                                 </div>
-                                <button @onclick=@(e => { IncrementPoints2(hamster2.Id); DecrementPoints2(hamster.Id); })> <img class="card-img-top img-fluid d-block mx-auto mb-3" src="@hamster2.ImgName" alt="@hamster2.Name"> </button>
+                                <button @onclick=@(e => { Win2(hamster2.Id); Lose2(hamster.Id); })> <img class="card-img-top img-fluid d-block mx-auto mb-3" src="@hamster2.ImgName" alt="@hamster2.Name"> </button>
                                 <div class="card-body p-1 px-3 row">
                                     <div class="col-6">
                                         <span class="badge p-2 border w-100 text-white bg-info ">Favorite Food: @hamster2.FavFood</span>
@@ -109,6 +109,68 @@ else
             Model2 = response2.Data;
         }
     }
+
+    private async Task Win1(int hamsterId)
+    {
+        var hamster = Model.First(u => u.Id == hamsterId);
+        var confirm = await jsRuntime.InvokeAsync<bool>("confirm", $"Vote for {hamster.Name}?");
+        if (confirm)
+        {
+            var response = await hamsterService.Wins(hamsterId);
+            if (response.Success)
+            {
+                //await jsRuntime.SweetAlertSuccess("Hamster Won");
+                await OnInitializedAsync();
+            }
+        }
+    }
+    private async Task Win2(int hamsterId)
+    {
+        var hamster = Model2.First(u => u.Id == hamsterId);
+        var confirm = await jsRuntime.InvokeAsync<bool>("confirm", $"Vote for {hamster.Name}?");
+        if (confirm)
+        {
+            var response = await hamsterService.Wins(hamsterId);
+            if (response.Success)
+            {
+                //await jsRuntime.SweetAlertSuccess("Hamster Won");
+                await OnInitializedAsync();
+            }
+        }
+    }
+    private async Task Lose1(int hamsterId)
+    {
+        var hamster = Model.First(u => u.Id == hamsterId);
+        var confirm = await jsRuntime.InvokeAsync<bool>("confirm", $"Vote for {hamster.Name}?");
+        if (confirm)
+        {
+            var response = await hamsterService.Losses(hamsterId);
+            if (response.Success)
+            {
+                //await jsRuntime.SweetAlertSuccess("Hamster Won");
+                await OnInitializedAsync();
+            }
+        }
+    }
+    private async Task Lose2(int hamsterId)
+    {
+        var hamster = Model2.First(u => u.Id == hamsterId);
+        var confirm = await jsRuntime.InvokeAsync<bool>("confirm", $"Vote for {hamster.Name}?");
+        if (confirm)
+        {
+            var response = await hamsterService.Losses(hamsterId);
+            if (response.Success)
+            {
+                //await jsRuntime.SweetAlertSuccess("Hamster Won");
+                await OnInitializedAsync();
+            }
+        }
+    }
+
+
+
+
+
 
 
     async Task IncrementPoints(int hamsterId)

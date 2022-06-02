@@ -135,14 +135,77 @@ namespace HamsterApp.API.Controllers
                 }
                 else
                 {
-                    _logger.LogError(ex, $"Error performing GET in {nameof(PutHamster)}");
+                    _logger.LogError(ex, $"Error performing PUT in {nameof(GetHamster)}");
                     return StatusCode(500, Messages.Error500Message);
                 }
             }
 
             return NoContent();
         }
+        [HttpPut("Increment")]
+        public async Task<IActionResult> Increment(int id)
+        {
+            var hamsterFound = _context.Hamsters.Find(id);
 
+            try
+            {
+                if (hamsterFound == null)
+                {
+                    return BadRequest("Hamster not found");
+                }
+                else
+                {
+                    hamsterFound.Name = hamsterFound.Name;
+                    hamsterFound.Age = hamsterFound.Age;
+                    hamsterFound.Loves = hamsterFound.Loves;
+                    hamsterFound.Games++;
+                    hamsterFound.Wins++;
+                    hamsterFound.Losses = hamsterFound.Losses;
+                    _context.Update(hamsterFound);
+                    _context.SaveChanges();
+                    return Accepted(hamsterFound);
+                }
+
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                _logger.LogError(ex, $"Error performing PUT in {nameof(GetHamster)}");
+                throw;
+            }
+        }
+
+        [HttpPut("Decrement")]
+        public async Task<IActionResult> Decrement(int id)
+        {
+            var hamsterFound = _context.Hamsters.Find(id);
+
+            if (hamsterFound == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                hamsterFound.Name = hamsterFound.Name;
+                hamsterFound.Age = hamsterFound.Age;
+                hamsterFound.Loves = hamsterFound.Loves;
+                hamsterFound.Games++;
+                hamsterFound.Wins = hamsterFound.Wins;
+                hamsterFound.Losses++;
+
+            }
+            _context.Entry(hamsterFound).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                _logger.LogError(ex, $"Error performing PUT in {nameof(GetHamster)}");
+                return StatusCode(500, Messages.Error500Message);
+            }
+            return Accepted(hamsterFound);
+        }
         // POST: api/Hamsters
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
@@ -181,6 +244,7 @@ namespace HamsterApp.API.Controllers
                 {
                     return NotFound();
                 }
+
 
                 _context.Hamsters.Remove(hamster);
                 await _context.SaveChangesAsync();
