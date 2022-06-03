@@ -141,6 +141,7 @@ else
     {
         var hamster = Model.First(u => u.Id == id);
         var response = await hamsterService.Losses(id);
+
         if (response.Success)
         {
             await jsRuntime.ToastrError($"{hamster.Name} +1 Lose");
@@ -150,6 +151,7 @@ else
     {
         var hamster = Model2.First(u => u.Id == id);
         var response = await hamsterService.Losses(id);
+
         if (response.Success)
         {
             await jsRuntime.ToastrError($"{hamster.Name} +1 Lose");
