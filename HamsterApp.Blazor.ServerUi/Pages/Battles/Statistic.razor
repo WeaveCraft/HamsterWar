@@ -1,7 +1,126 @@
-﻿@page "/statistic"
+﻿@page "/statistics"
 
-<h3>Statistic</h3>
+@inject IHamsterService hamsterService
+@inject IJSRuntime jsRuntime
+<h3 class="text-center">Statistics of Hamsters</h3>
+
+@if (Win.Success == false)
+{
+    <div class="alert alert-danger">
+        <h4>Loading Data...</h4>
+    </div>
+}
+
+@if (Winners != null)
+{
+    <div class="pb-3 backgroundWhite">
+        <div class="col-12">
+            <div class="row my-2 d-flex justify-content-center">
+                <h4>Winners</h4>
+                @foreach (var hamster in Winners)
+                    {
+                        <div class="col align-self-center">
+                            <div class="card bg-white rounded shadow-sm" style="border:1px solid #222">
+                                <div class="card-body pb-1 row">
+                                    <div class="col-8 h5">@hamster.Name</div>
+                                    <div class="col-4 text-end"><span class="text-info h4">Age: @hamster.Age</span></div>
+                                </div>
+                                 <img class="card-img-top img-thumbnail d-block mx-auto mb-3" src="@hamster.ImgName" alt="@hamster.Name"> 
+                                <div class="card-body p-1 px-3 row">
+                                    <div class="col-6">
+                                        <span class="badge p-2 border w-100 text-white bg-success ">Favorite Food: @hamster.FavFood</span>
+                                    </div>
+                                    <div class="col-6 border-0">
+                                        <span class="badge p-2 border w-100 text-white bg-success ">Loves: @hamster.Loves</span>
+                                    </div>
+
+                                    <div class="col-6 border-0">
+                                        <span class="badge p-2 border w-100 text-white bg-success ">Wins: @hamster.Wins</span>
+                                    </div>
+                                    <div class="col-6 border-0">
+                                        <span class="badge p-2 border w-100 text-white bg-success ">Losses: @hamster.Losses</span>
+                                    </div>
+                                    <div class="col-12 pt-2" style="font-size:13px; text-align:center">
+                                       <span class="badge p-2 border w-100 text-white bg-info ">Games: @hamster.Games</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+
+                    <h3>Losers</h3>
+                @foreach (var hamster in Losers)
+                {
+                    {
+                        <div class="col align-self-center">
+                            <div class="card bg-white rounded shadow-sm" style="border:1px solid #222">
+                                <div class="card-body pb-1 row">
+                                    <div class="col-8 h5">@hamster.Name</div>
+                                    <div class="col-4 text-end"><span class="text-info h4">Age: @hamster.Age</span></div>
+                                </div>
+                                 <img class="card-img-top img-thumbnail d-block mx-auto mb-3" src="@hamster.ImgName" alt="@hamster.Name"> 
+                                <div class="card-body p-1 px-3 row">
+                                    <div class="col-6">
+                                        <span class="badge p-2 border w-100 text-white bg-danger ">Favorite Food: @hamster.FavFood</span>
+                                    </div>
+                                    <div class="col-6 border-0">
+                                        <span class="badge p-2 border w-100 text-white bg-danger ">Loves: @hamster.Loves</span>
+                                    </div>
+                                    <div class="col-6 border-0">
+                                        <span class="badge p-2 border w-100 text-white bg-danger ">Wins: @hamster.Wins</span>
+                                    </div>
+                                    <div class="col-6 border-0">
+                                        <span class="badge p-2 border w-100 text-white bg-danger ">Losses: @hamster.Losses</span>
+                                    </div>
+
+                                    <div class="col-12 pt-2" style="font-size:13px; text-align:center">
+                                       <span class="badge p-2 border w-100 text-white bg-info ">Games: @hamster.Games</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    if (IsLoading)
+    {
+        <div class="row my-2 d-flex justify-content-center">
+            <div class="col-lg-8 col-md-6 pb-4 filter">
+                <img class="card-img-top img-fluid d-block my-auto mb-3" src="/images/hamsterStat_loading.gif">
+            </div>
+        </div>
+    }
+    else
+    {
+        <p>There are no hamsters to display.</p>
+    }
+}
 
 @code {
+    private List<HamsterReadOnlyDto> Winners;
+    private List<HamsterReadOnlyDto> Losers;
+    private Response<List<HamsterReadOnlyDto>> Win = new Response<List<HamsterReadOnlyDto>> { Success = true };
+    private Response<List<HamsterReadOnlyDto>> Lose = new Response<List<HamsterReadOnlyDto>> { Success = true };
 
+    public bool IsLoading { get; set; } = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Win = await hamsterService.FiveWinners();
+        Lose = await hamsterService.FiveLosers();
+        if (Win.Success && Lose.Success)
+        {
+            Winners = Win.Data;
+            Losers = Lose.Data;
+        }
+    }
 }

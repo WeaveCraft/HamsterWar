@@ -220,5 +220,47 @@ namespace HamsterApp.Blazor.ServerUi.Services
             }
             return response;
         }
+
+        public async Task<Response<List<HamsterReadOnlyDto>>> FiveWinners()
+        {
+            Response<List<HamsterReadOnlyDto>> response;
+
+            try
+            {
+                await GetBearerToken();
+                var data = await _client.GetFiveWinnersAsync();
+                response = new Response<List<HamsterReadOnlyDto>>
+                {
+                    Data = data.ToList(),
+                    Success = true
+                };
+            }
+            catch (ApiException ex)
+            {
+                response = ConvertApiExceptions<List<HamsterReadOnlyDto>>(ex);
+            }
+            return response;
+        }
+
+        public async Task<Response<List<HamsterReadOnlyDto>>> FiveLosers()
+        {
+            Response<List<HamsterReadOnlyDto>> response;
+
+            try
+            {
+                await GetBearerToken();
+                var data = await _client.GetFiveLosersAsync();
+                response = new Response<List<HamsterReadOnlyDto>>
+                {
+                    Data = data.ToList(),
+                    Success = true
+                };
+            }
+            catch (ApiException ex)
+            {
+                response = ConvertApiExceptions<List<HamsterReadOnlyDto>>(ex);
+            }
+            return response;
+        }
     }
 }
