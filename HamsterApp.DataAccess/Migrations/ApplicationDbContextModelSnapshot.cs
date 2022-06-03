@@ -99,7 +99,7 @@ namespace HamsterApp.DataAccess.Migrations
                         {
                             Id = "e7eabebd-e10c-4da9-b6aa-2db9cad6b84d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4dec43e0-5cec-457c-9f8b-e61c000db162",
+                            ConcurrencyStamp = "007a69dc-0618-467f-beb8-9a2ffd122dc1",
                             Email = "admin@hamsters.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -107,9 +107,9 @@ namespace HamsterApp.DataAccess.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@HAMSTERS.COM",
                             NormalizedUserName = "ADMIN@HAMSTERS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPBf3rFezVIgC/4PJCIxF4Ert9Ou+c3Awvc0UH8vH3Me7+eotpZ/nZTOVuxaTtAtBA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEZerZiiNkXPwGox76UoWExZaV3sjq+cfkBIB2rMGMuuOukQewS1mMlyYzRxxJi5+A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2266e292-e0b7-45f1-9a37-3dfbdcb1aed8",
+                            SecurityStamp = "98059ea3-da47-4047-9948-05d72d8de626",
                             TwoFactorEnabled = false,
                             UserName = "admin@hamsters.com"
                         },
@@ -117,7 +117,7 @@ namespace HamsterApp.DataAccess.Migrations
                         {
                             Id = "087f2124-f507-4642-a8f7-84442abb3d70",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "34e0d63b-058f-401d-9d54-2bbffce3e02a",
+                            ConcurrencyStamp = "2f306d70-d01c-4354-8316-9bad15223537",
                             Email = "user@hamsters.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -125,9 +125,9 @@ namespace HamsterApp.DataAccess.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@HAMSTERS.COM",
                             NormalizedUserName = "USER@HAMSTERS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFj6zRblMy91GC/G4s9k6XazmfwhRMYXMdL/UkbFFPxYeTWPRR1hkgsFuo5iORmP1w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFgC2477yCNO/FaVpjivgagYx15dF/fwXU5gL8vCj6mkMqj8E8aQzvAJP9nj1gnKLA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1696bbcd-3750-48db-9d0d-da7eb685b350",
+                            SecurityStamp = "ecbfb0fc-cdfc-44bc-b3b9-fefa166db28c",
                             TwoFactorEnabled = false,
                             UserName = "user@hamsters.com"
                         });
@@ -174,480 +174,480 @@ namespace HamsterApp.DataAccess.Migrations
                         {
                             Id = 1,
                             Age = 2,
-                            FavFood = "Eating1",
+                            FavFood = "Camembert",
                             Games = 0,
                             ImgName = "/images/hamster-1.jpg",
                             Losses = 0,
-                            Loves = "Losing1",
-                            Name = "Hamster1",
+                            Loves = "His Master",
+                            Name = "Ebichu",
                             Wins = 0
                         },
                         new
                         {
                             Id = 2,
                             Age = 3,
-                            FavFood = "Eating2",
+                            FavFood = "Pizza",
                             Games = 0,
                             ImgName = "/images/hamster-2.jpg",
                             Losses = 0,
-                            Loves = "Losing2",
-                            Name = "Hamster2",
+                            Loves = "Climbing",
+                            Name = "Oliver",
                             Wins = 0
                         },
                         new
                         {
                             Id = 3,
                             Age = 2,
-                            FavFood = "Eating3",
+                            FavFood = "Mud",
                             Games = 0,
                             ImgName = "/images/hamster-3.jpg",
                             Losses = 0,
-                            Loves = "Losing3",
-                            Name = "Hamster3",
+                            Loves = "Playing Football",
+                            Name = "Iver",
                             Wins = 0
                         },
                         new
                         {
                             Id = 4,
                             Age = 1,
-                            FavFood = "Eating4",
+                            FavFood = "Olives",
                             Games = 0,
                             ImgName = "/images/hamster-4.jpg",
                             Losses = 0,
-                            Loves = "Losing4",
-                            Name = "Hamster4",
+                            Loves = "Sleeping",
+                            Name = "Urban",
                             Wins = 0
                         },
                         new
                         {
                             Id = 5,
                             Age = 2,
-                            FavFood = "Eating5",
+                            FavFood = "Tortila",
                             Games = 0,
                             ImgName = "/images/hamster-5.jpg",
                             Losses = 0,
-                            Loves = "Losing5",
-                            Name = "Hamster5",
+                            Loves = "Fighting",
+                            Name = "Lisa",
                             Wins = 0
                         },
                         new
                         {
                             Id = 6,
                             Age = 2,
-                            FavFood = "Eating6",
+                            FavFood = "Salad",
                             Games = 0,
                             ImgName = "/images/hamster-6.jpg",
                             Losses = 0,
-                            Loves = "Losing6",
-                            Name = "Hamster6",
+                            Loves = "Working out",
+                            Name = "Thomas",
                             Wins = 0
                         },
                         new
                         {
                             Id = 7,
                             Age = 3,
-                            FavFood = "Eating7",
+                            FavFood = "Flesh",
                             Games = 0,
                             ImgName = "/images/hamster-7.jpg",
                             Losses = 0,
-                            Loves = "Losing7",
-                            Name = "Hamster7",
+                            Loves = "Chaos",
+                            Name = "Renya",
                             Wins = 0
                         },
                         new
                         {
                             Id = 8,
                             Age = 2,
-                            FavFood = "Eating8",
+                            FavFood = "Naan",
                             Games = 0,
                             ImgName = "/images/hamster-8.jpg",
                             Losses = 0,
-                            Loves = "Losing8",
-                            Name = "Hamster8",
+                            Loves = "Trains",
+                            Name = "Valvet",
                             Wins = 0
                         },
                         new
                         {
                             Id = 9,
                             Age = 1,
-                            FavFood = "Eating9",
+                            FavFood = "Poptarts",
                             Games = 0,
                             ImgName = "/images/hamster-9.jpg",
                             Losses = 0,
-                            Loves = "Losing9",
-                            Name = "Hamster9",
+                            Loves = "America",
+                            Name = "Cece",
                             Wins = 0
                         },
                         new
                         {
                             Id = 10,
                             Age = 2,
-                            FavFood = "Eating10",
+                            FavFood = "Potatoes",
                             Games = 0,
                             ImgName = "/images/hamster-10.jpg",
                             Losses = 0,
-                            Loves = "Losing10",
-                            Name = "Hamster10",
+                            Loves = "Drama",
+                            Name = "Poppy",
                             Wins = 0
                         },
                         new
                         {
                             Id = 11,
                             Age = 3,
-                            FavFood = "Eating11",
+                            FavFood = "Plastic",
                             Games = 0,
                             ImgName = "/images/hamster-11.jpg",
                             Losses = 0,
-                            Loves = "Losing11",
-                            Name = "Hamster11",
+                            Loves = "Losing",
+                            Name = "Ehmberg",
                             Wins = 0
                         },
                         new
                         {
                             Id = 12,
                             Age = 2,
-                            FavFood = "Eating12",
+                            FavFood = "Ramen",
                             Games = 0,
                             ImgName = "/images/hamster-12.jpg",
                             Losses = 0,
-                            Loves = "Losing12",
-                            Name = "Hamster12",
+                            Loves = "Subways",
+                            Name = "Svahlberg",
                             Wins = 0
                         },
                         new
                         {
                             Id = 13,
                             Age = 3,
-                            FavFood = "Eating13",
+                            FavFood = "Tacos",
                             Games = 0,
                             ImgName = "/images/hamster-13.jpg",
                             Losses = 0,
-                            Loves = "Losing13",
-                            Name = "Hamster13",
+                            Loves = "Gaining weight",
+                            Name = "Ohm",
                             Wins = 0
                         },
                         new
                         {
                             Id = 14,
                             Age = 1,
-                            FavFood = "Eating14",
+                            FavFood = "Meatballs",
                             Games = 0,
                             ImgName = "/images/hamster-14.jpg",
                             Losses = 0,
-                            Loves = "Losing14",
-                            Name = "Hamster14",
+                            Loves = "Sitting",
+                            Name = "Bert",
                             Wins = 0
                         },
                         new
                         {
                             Id = 15,
                             Age = 1,
-                            FavFood = "Eating15",
+                            FavFood = "Salmon",
                             Games = 0,
                             ImgName = "/images/hamster-15.jpg",
                             Losses = 0,
-                            Loves = "Losing15",
-                            Name = "Hamster15",
+                            Loves = "Hunting",
+                            Name = "Fredrik",
                             Wins = 0
                         },
                         new
                         {
                             Id = 16,
                             Age = 1,
-                            FavFood = "Eating16",
+                            FavFood = "Tomatoes",
                             Games = 0,
                             ImgName = "/images/hamster-16.jpg",
                             Losses = 0,
-                            Loves = "Losing16",
-                            Name = "Hamster16",
+                            Loves = "Swimming",
+                            Name = "Ida",
                             Wins = 0
                         },
                         new
                         {
                             Id = 17,
                             Age = 1,
-                            FavFood = "Eating17",
+                            FavFood = "Chocolate",
                             Games = 0,
                             ImgName = "/images/hamster-17.jpg",
                             Losses = 0,
-                            Loves = "Losing17",
-                            Name = "Hamster17",
+                            Loves = "Running",
+                            Name = "Karl",
                             Wins = 0
                         },
                         new
                         {
                             Id = 18,
                             Age = 1,
-                            FavFood = "Eating18",
+                            FavFood = "Sourcream",
                             Games = 0,
                             ImgName = "/images/hamster-18.jpg",
                             Losses = 0,
-                            Loves = "Losing18",
-                            Name = "Hamster18",
+                            Loves = "Walking",
+                            Name = "Linn",
                             Wins = 0
                         },
                         new
                         {
                             Id = 19,
                             Age = 1,
-                            FavFood = "Eating19",
+                            FavFood = "Carrots",
                             Games = 0,
                             ImgName = "/images/hamster-19.jpg",
                             Losses = 0,
-                            Loves = "Losing19",
-                            Name = "Hamster19",
+                            Loves = "Winning",
+                            Name = "Ewa",
                             Wins = 0
                         },
                         new
                         {
                             Id = 20,
                             Age = 1,
-                            FavFood = "Eating20",
+                            FavFood = "Beans",
                             Games = 0,
                             ImgName = "/images/hamster-20.jpg",
                             Losses = 0,
-                            Loves = "Losing20",
-                            Name = "Hamster20",
+                            Loves = "Farting",
+                            Name = "Ingrid",
                             Wins = 0
                         },
                         new
                         {
                             Id = 21,
                             Age = 1,
-                            FavFood = "Eating21",
+                            FavFood = "Burritos",
                             Games = 0,
                             ImgName = "/images/hamster-21.jpg",
                             Losses = 0,
-                            Loves = "Losing21",
-                            Name = "Hamster21",
+                            Loves = "Dancing",
+                            Name = "Daniel",
                             Wins = 0
                         },
                         new
                         {
                             Id = 22,
                             Age = 1,
-                            FavFood = "Eating22",
+                            FavFood = "Garlic",
                             Games = 0,
                             ImgName = "/images/hamster-22.jpg",
                             Losses = 0,
-                            Loves = "Losing22",
-                            Name = "Hamster22",
+                            Loves = "Breathing",
+                            Name = "Nizz",
                             Wins = 0
                         },
                         new
                         {
                             Id = 23,
                             Age = 1,
-                            FavFood = "Eating23",
+                            FavFood = "Oranges",
                             Games = 0,
                             ImgName = "/images/hamster-23.jpg",
                             Losses = 0,
-                            Loves = "Losing23",
-                            Name = "Hamster23",
+                            Loves = "Friends",
+                            Name = "Gustaf",
                             Wins = 0
                         },
                         new
                         {
                             Id = 24,
                             Age = 3,
-                            FavFood = "Eating24",
+                            FavFood = "Lemon",
                             Games = 0,
                             ImgName = "/images/hamster-24.jpg",
                             Losses = 0,
-                            Loves = "Losing24",
-                            Name = "Hamster24",
+                            Loves = "Family",
+                            Name = "Tiffany",
                             Wins = 0
                         },
                         new
                         {
                             Id = 25,
                             Age = 1,
-                            FavFood = "Eating25",
+                            FavFood = "Pancakes",
                             Games = 0,
                             ImgName = "/images/hamster-25.jpg",
                             Losses = 0,
-                            Loves = "Losing25",
-                            Name = "Hamster25",
+                            Loves = "Baking",
+                            Name = "Jake",
                             Wins = 0
                         },
                         new
                         {
                             Id = 26,
                             Age = 1,
-                            FavFood = "Eating26",
+                            FavFood = "Sandwiches",
                             Games = 0,
                             ImgName = "/images/hamster-26.jpg",
                             Losses = 0,
-                            Loves = "Losing26",
-                            Name = "Hamster26",
+                            Loves = "Adventure",
+                            Name = "Finn",
                             Wins = 0
                         },
                         new
                         {
                             Id = 27,
                             Age = 1,
-                            FavFood = "Eating27",
+                            FavFood = "Spaghetti",
                             Games = 0,
                             ImgName = "/images/hamster-27.jpg",
                             Losses = 0,
-                            Loves = "Losing27",
-                            Name = "Hamster27",
+                            Loves = "Opera",
+                            Name = "Jarvis",
                             Wins = 0
                         },
                         new
                         {
                             Id = 28,
                             Age = 1,
-                            FavFood = "Eating28",
+                            FavFood = "Pears",
                             Games = 0,
                             ImgName = "/images/hamster-28.jpg",
                             Losses = 0,
-                            Loves = "Losing28",
-                            Name = "Hamster28",
+                            Loves = "Music",
+                            Name = "Peppy",
                             Wins = 0
                         },
                         new
                         {
                             Id = 29,
                             Age = 1,
-                            FavFood = "Eating29",
+                            FavFood = "Curry",
                             Games = 0,
                             ImgName = "/images/hamster-29.jpg",
                             Losses = 0,
-                            Loves = "Losing29",
-                            Name = "Hamster29",
+                            Loves = "The Sun",
+                            Name = "Hampus",
                             Wins = 0
                         },
                         new
                         {
                             Id = 30,
                             Age = 1,
-                            FavFood = "Eating30",
+                            FavFood = "Dumplings",
                             Games = 0,
                             ImgName = "/images/hamster-30.jpg",
                             Losses = 0,
-                            Loves = "Losing30",
-                            Name = "Hamster30",
+                            Loves = "Work",
+                            Name = "Fiona",
                             Wins = 0
                         },
                         new
                         {
                             Id = 31,
                             Age = 1,
-                            FavFood = "Eating31",
+                            FavFood = "Gyoza",
                             Games = 0,
                             ImgName = "/images/hamster-31.jpg",
                             Losses = 0,
-                            Loves = "Losing31",
-                            Name = "Hamster31",
+                            Loves = "Traveling",
+                            Name = "Lisabell",
                             Wins = 0
                         },
                         new
                         {
                             Id = 32,
                             Age = 1,
-                            FavFood = "Eating32",
+                            FavFood = "Fish",
                             Games = 0,
                             ImgName = "/images/hamster-32.jpg",
                             Losses = 0,
-                            Loves = "Losing32",
-                            Name = "Hamster32",
+                            Loves = "Fishing",
+                            Name = "Olivia",
                             Wins = 0
                         },
                         new
                         {
                             Id = 33,
                             Age = 1,
-                            FavFood = "Eating33",
+                            FavFood = "Melons",
                             Games = 0,
                             ImgName = "/images/hamster-33.jpg",
                             Losses = 0,
-                            Loves = "Losing33",
-                            Name = "Hamster33",
+                            Loves = "Gardening",
+                            Name = "Cedric",
                             Wins = 0
                         },
                         new
                         {
                             Id = 34,
                             Age = 1,
-                            FavFood = "Eating34",
+                            FavFood = "Chili con Carne",
                             Games = 0,
                             ImgName = "/images/hamster-34.jpg",
                             Losses = 0,
-                            Loves = "Losing34",
-                            Name = "Hamster34",
+                            Loves = "Haircuts",
+                            Name = "Hamil",
                             Wins = 0
                         },
                         new
                         {
                             Id = 35,
                             Age = 3,
-                            FavFood = "Eating35",
+                            FavFood = "Pupusas",
                             Games = 0,
                             ImgName = "/images/hamster-35.jpg",
                             Losses = 0,
-                            Loves = "Losing35",
-                            Name = "Hamster35",
+                            Loves = "Sunbathing",
+                            Name = "Julia",
                             Wins = 0
                         },
                         new
                         {
                             Id = 36,
                             Age = 2,
-                            FavFood = "Eating36",
+                            FavFood = "Cakes",
                             Games = 0,
                             ImgName = "/images/hamster-36.jpg",
                             Losses = 0,
-                            Loves = "Losing36",
-                            Name = "Hamster36",
+                            Loves = "Exercise",
+                            Name = "Ana-Maria",
                             Wins = 0
                         },
                         new
                         {
                             Id = 37,
                             Age = 3,
-                            FavFood = "Eating37",
+                            FavFood = "Popcorn",
                             Games = 0,
                             ImgName = "/images/hamster-37.jpg",
                             Losses = 0,
-                            Loves = "Losing37",
-                            Name = "Hamster37",
+                            Loves = "Hunting",
+                            Name = "Sammy",
                             Wins = 0
                         },
                         new
                         {
                             Id = 38,
                             Age = 1,
-                            FavFood = "Eating38",
+                            FavFood = "Fried-Chicken",
                             Games = 0,
                             ImgName = "/images/hamster-38.jpg",
                             Losses = 0,
-                            Loves = "Losing38",
-                            Name = "Hamster38",
+                            Loves = "Brewing",
+                            Name = "Alex",
                             Wins = 0
                         },
                         new
                         {
                             Id = 39,
                             Age = 1,
-                            FavFood = "Eating39",
+                            FavFood = "Corn",
                             Games = 0,
                             ImgName = "/images/hamster-39.jpg",
                             Losses = 0,
-                            Loves = "Losing39",
-                            Name = "Hamster39",
+                            Loves = "Reading",
+                            Name = "Sandy",
                             Wins = 0
                         },
                         new
                         {
                             Id = 40,
                             Age = 3,
-                            FavFood = "Eating40",
+                            FavFood = "Hamsters",
                             Games = 0,
                             ImgName = "/images/hamster-40.jpg",
                             Losses = 0,
-                            Loves = "Losing40",
-                            Name = "Hamster40",
+                            Loves = "Being Crazy",
+                            Name = "Felicia",
                             Wins = 0
                         });
                 });
@@ -706,14 +706,14 @@ namespace HamsterApp.DataAccess.Migrations
                         new
                         {
                             Id = "3845d87b-b230-41ff-a1a7-84bbd7ec821d",
-                            ConcurrencyStamp = "5fa80517-4c06-433f-9d9f-72a5d3e21977",
+                            ConcurrencyStamp = "d9c60804-68c0-4ea8-b889-370374cfb43e",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = "985f4930-21ad-4249-abaf-e4251b1553d9",
-                            ConcurrencyStamp = "2ec9a09b-8429-4997-898d-2c929b965197",
+                            ConcurrencyStamp = "99d7ed20-060f-4ca4-9406-17c5cde7e80f",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });

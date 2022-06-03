@@ -87,10 +87,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 1,
-                    Name = "Hamster1",
+                    Name = "Ebichu",
                     Age = 2,
-                    FavFood = "Eating1",
-                    Loves = "Losing1",
+                    FavFood = "Camembert",
+                    Loves = "His Master",
                     ImgName = "/images/hamster-1.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -99,10 +99,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 2,
-                    Name = "Hamster2",
+                    Name = "Oliver",
                     Age = 3,
-                    FavFood = "Eating2",
-                    Loves = "Losing2",
+                    FavFood = "Pizza",
+                    Loves = "Climbing",
                     ImgName = "/images/hamster-2.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -111,10 +111,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 3,
-                    Name = "Hamster3",
+                    Name = "Iver",
                     Age = 2,
-                    FavFood = "Eating3",
-                    Loves = "Losing3",
+                    FavFood = "Mud",
+                    Loves = "Playing Football",
                     ImgName = "/images/hamster-3.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -123,10 +123,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 4,
-                    Name = "Hamster4",
+                    Name = "Urban",
                     Age = 1,
-                    FavFood = "Eating4",
-                    Loves = "Losing4",
+                    FavFood = "Olives",
+                    Loves = "Sleeping",
                     ImgName = "/images/hamster-4.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -135,10 +135,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 5,
-                    Name = "Hamster5",
+                    Name = "Lisa",
                     Age = 2,
-                    FavFood = "Eating5",
-                    Loves = "Losing5",
+                    FavFood = "Tortila",
+                    Loves = "Fighting",
                     ImgName = "/images/hamster-5.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -147,10 +147,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 6,
-                    Name = "Hamster6",
+                    Name = "Thomas",
                     Age = 2,
-                    FavFood = "Eating6",
-                    Loves = "Losing6",
+                    FavFood = "Salad",
+                    Loves = "Working out",
                     ImgName = "/images/hamster-6.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -159,10 +159,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 7,
-                    Name = "Hamster7",
+                    Name = "Renya",
                     Age = 3,
-                    FavFood = "Eating7",
-                    Loves = "Losing7",
+                    FavFood = "Flesh",
+                    Loves = "Chaos",
                     ImgName = "/images/hamster-7.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -171,10 +171,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 8,
-                    Name = "Hamster8",
+                    Name = "Valvet",
                     Age = 2,
-                    FavFood = "Eating8",
-                    Loves = "Losing8",
+                    FavFood = "Naan",
+                    Loves = "Trains",
                     ImgName = "/images/hamster-8.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -183,10 +183,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 9,
-                    Name = "Hamster9",
+                    Name = "Cece",
                     Age = 1,
-                    FavFood = "Eating9",
-                    Loves = "Losing9",
+                    FavFood = "Poptarts",
+                    Loves = "America",
                     ImgName = "/images/hamster-9.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -195,10 +195,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 10,
-                    Name = "Hamster10",
+                    Name = "Poppy",
                     Age = 2,
-                    FavFood = "Eating10",
-                    Loves = "Losing10",
+                    FavFood = "Potatoes",
+                    Loves = "Drama",
                     ImgName = "/images/hamster-10.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -207,10 +207,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 11,
-                    Name = "Hamster11",
+                    Name = "Ehmberg",
                     Age = 3,
-                    FavFood = "Eating11",
-                    Loves = "Losing11",
+                    FavFood = "Plastic",
+                    Loves = "Losing",
                     ImgName = "/images/hamster-11.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -219,10 +219,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 12,
-                    Name = "Hamster12",
+                    Name = "Svahlberg",
                     Age = 2,
-                    FavFood = "Eating12",
-                    Loves = "Losing12",
+                    FavFood = "Ramen",
+                    Loves = "Subways",
                     ImgName = "/images/hamster-12.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -231,10 +231,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 13,
-                    Name = "Hamster13",
+                    Name = "Ohm",
                     Age = 3,
-                    FavFood = "Eating13",
-                    Loves = "Losing13",
+                    FavFood = "Tacos",
+                    Loves = "Gaining weight",
                     ImgName = "/images/hamster-13.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -243,10 +243,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 14,
-                    Name = "Hamster14",
+                    Name = "Bert",
                     Age = 1,
-                    FavFood = "Eating14",
-                    Loves = "Losing14",
+                    FavFood = "Meatballs",
+                    Loves = "Sitting",
                     ImgName = "/images/hamster-14.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -255,10 +255,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 15,
-                    Name = "Hamster15",
+                    Name = "Fredrik",
                     Age = 1,
-                    FavFood = "Eating15",
-                    Loves = "Losing15",
+                    FavFood = "Salmon",
+                    Loves = "Hunting",
                     ImgName = "/images/hamster-15.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -267,10 +267,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 16,
-                    Name = "Hamster16",
+                    Name = "Ida",
                     Age = 1,
-                    FavFood = "Eating16",
-                    Loves = "Losing16",
+                    FavFood = "Tomatoes",
+                    Loves = "Swimming",
                     ImgName = "/images/hamster-16.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -279,10 +279,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 17,
-                    Name = "Hamster17",
+                    Name = "Karl",
                     Age = 1,
-                    FavFood = "Eating17",
-                    Loves = "Losing17",
+                    FavFood = "Chocolate",
+                    Loves = "Running",
                     ImgName = "/images/hamster-17.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -291,10 +291,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 18,
-                    Name = "Hamster18",
+                    Name = "Linn",
                     Age = 1,
-                    FavFood = "Eating18",
-                    Loves = "Losing18",
+                    FavFood = "Sourcream",
+                    Loves = "Walking",
                     ImgName = "/images/hamster-18.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -303,10 +303,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 19,
-                    Name = "Hamster19",
+                    Name = "Ewa",
                     Age = 1,
-                    FavFood = "Eating19",
-                    Loves = "Losing19",
+                    FavFood = "Carrots",
+                    Loves = "Winning",
                     ImgName = "/images/hamster-19.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -315,10 +315,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 20,
-                    Name = "Hamster20",
+                    Name = "Ingrid",
                     Age = 1,
-                    FavFood = "Eating20",
-                    Loves = "Losing20",
+                    FavFood = "Beans",
+                    Loves = "Farting",
                     ImgName = "/images/hamster-20.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -327,10 +327,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 21,
-                    Name = "Hamster21",
+                    Name = "Daniel",
                     Age = 1,
-                    FavFood = "Eating21",
-                    Loves = "Losing21",
+                    FavFood = "Burritos",
+                    Loves = "Dancing",
                     ImgName = "/images/hamster-21.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -339,10 +339,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 22,
-                    Name = "Hamster22",
+                    Name = "Nizz",
                     Age = 1,
-                    FavFood = "Eating22",
-                    Loves = "Losing22",
+                    FavFood = "Garlic",
+                    Loves = "Breathing",
                     ImgName = "/images/hamster-22.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -351,10 +351,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 23,
-                    Name = "Hamster23",
+                    Name = "Gustaf",
                     Age = 1,
-                    FavFood = "Eating23",
-                    Loves = "Losing23",
+                    FavFood = "Oranges",
+                    Loves = "Friends",
                     ImgName = "/images/hamster-23.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -363,10 +363,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 24,
-                    Name = "Hamster24",
+                    Name = "Tiffany",
                     Age = 3,
-                    FavFood = "Eating24",
-                    Loves = "Losing24",
+                    FavFood = "Lemon",
+                    Loves = "Family",
                     ImgName = "/images/hamster-24.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -375,10 +375,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 25,
-                    Name = "Hamster25",
+                    Name = "Jake",
                     Age = 1,
-                    FavFood = "Eating25",
-                    Loves = "Losing25",
+                    FavFood = "Pancakes",
+                    Loves = "Baking",
                     ImgName = "/images/hamster-25.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -387,10 +387,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 26,
-                    Name = "Hamster26",
+                    Name = "Finn",
                     Age = 1,
-                    FavFood = "Eating26",
-                    Loves = "Losing26",
+                    FavFood = "Sandwiches",
+                    Loves = "Adventure",
                     ImgName = "/images/hamster-26.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -399,10 +399,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 27,
-                    Name = "Hamster27",
+                    Name = "Jarvis",
                     Age = 1,
-                    FavFood = "Eating27",
-                    Loves = "Losing27",
+                    FavFood = "Spaghetti",
+                    Loves = "Opera",
                     ImgName = "/images/hamster-27.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -411,10 +411,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 28,
-                    Name = "Hamster28",
+                    Name = "Peppy",
                     Age = 1,
-                    FavFood = "Eating28",
-                    Loves = "Losing28",
+                    FavFood = "Pears",
+                    Loves = "Music",
                     ImgName = "/images/hamster-28.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -423,10 +423,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 29,
-                    Name = "Hamster29",
+                    Name = "Hampus",
                     Age = 1,
-                    FavFood = "Eating29",
-                    Loves = "Losing29",
+                    FavFood = "Curry",
+                    Loves = "The Sun",
                     ImgName = "/images/hamster-29.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -435,10 +435,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 30,
-                    Name = "Hamster30",
+                    Name = "Fiona",
                     Age = 1,
-                    FavFood = "Eating30",
-                    Loves = "Losing30",
+                    FavFood = "Dumplings",
+                    Loves = "Work",
                     ImgName = "/images/hamster-30.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -447,10 +447,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 31,
-                    Name = "Hamster31",
+                    Name = "Lisabell",
                     Age = 1,
-                    FavFood = "Eating31",
-                    Loves = "Losing31",
+                    FavFood = "Gyoza",
+                    Loves = "Traveling",
                     ImgName = "/images/hamster-31.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -459,10 +459,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 32,
-                    Name = "Hamster32",
+                    Name = "Olivia",
                     Age = 1,
-                    FavFood = "Eating32",
-                    Loves = "Losing32",
+                    FavFood = "Fish",
+                    Loves = "Fishing",
                     ImgName = "/images/hamster-32.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -471,10 +471,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 33,
-                    Name = "Hamster33",
+                    Name = "Cedric",
                     Age = 1,
-                    FavFood = "Eating33",
-                    Loves = "Losing33",
+                    FavFood = "Melons",
+                    Loves = "Gardening",
                     ImgName = "/images/hamster-33.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -483,10 +483,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 34,
-                    Name = "Hamster34",
+                    Name = "Hamil",
                     Age = 1,
-                    FavFood = "Eating34",
-                    Loves = "Losing34",
+                    FavFood = "Chili con Carne",
+                    Loves = "Haircuts",
                     ImgName = "/images/hamster-34.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -495,10 +495,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 35,
-                    Name = "Hamster35",
+                    Name = "Julia",
                     Age = 3,
-                    FavFood = "Eating35",
-                    Loves = "Losing35",
+                    FavFood = "Pupusas",
+                    Loves = "Sunbathing",
                     ImgName = "/images/hamster-35.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -507,10 +507,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 36,
-                    Name = "Hamster36",
+                    Name = "Ana-Maria",
                     Age = 2,
-                    FavFood = "Eating36",
-                    Loves = "Losing36",
+                    FavFood = "Cakes",
+                    Loves = "Exercise",
                     ImgName = "/images/hamster-36.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -519,10 +519,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 37,
-                    Name = "Hamster37",
+                    Name = "Sammy",
                     Age = 3,
-                    FavFood = "Eating37",
-                    Loves = "Losing37",
+                    FavFood = "Popcorn",
+                    Loves = "Hunting",
                     ImgName = "/images/hamster-37.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -531,10 +531,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 38,
-                    Name = "Hamster38",
+                    Name = "Alex",
                     Age = 1,
-                    FavFood = "Eating38",
-                    Loves = "Losing38",
+                    FavFood = "Fried-Chicken",
+                    Loves = "Brewing",
                     ImgName = "/images/hamster-38.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -543,10 +543,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 39,
-                    Name = "Hamster39",
+                    Name = "Sandy",
                     Age = 1,
-                    FavFood = "Eating39",
-                    Loves = "Losing39",
+                    FavFood = "Corn",
+                    Loves = "Reading",
                     ImgName = "/images/hamster-39.jpg",
                     Wins = 0,
                     Losses = 0,
@@ -555,10 +555,10 @@ namespace HamsterApp.API.Data
                 new Hamster
                 {
                     Id = 40,
-                    Name = "Hamster40",
+                    Name = "Felicia",
                     Age = 3,
-                    FavFood = "Eating40",
-                    Loves = "Losing40",
+                    FavFood = "Hamsters",
+                    Loves = "Being Crazy",
                     ImgName = "/images/hamster-40.jpg",
                     Wins = 0,
                     Losses = 0,
