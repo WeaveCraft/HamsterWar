@@ -43,6 +43,36 @@ namespace HamsterApp.API.Controllers
                 return StatusCode(500, Messages.Error500Message);
             }
         }
+        [HttpGet("GetFiveWinners")]
+        public async Task<ActionResult<IEnumerable<HamsterReadOnlyDto>>> GetFiveHinners()
+        {
+            try
+            {
+                var hamsters = await _context.Hamsters.ToListAsync();
+                var five = hamsters.OrderByDescending(u => u.Wins).Take(5);
+                return Ok(five);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error Performing GET in {nameof(GetHamsters)}");
+                return StatusCode(500, Messages.Error500Message);
+            }
+        }
+        [HttpGet("GetFiveLosers")]
+        public async Task<ActionResult<IEnumerable<HamsterReadOnlyDto>>> GetLoserHamsters()
+        {
+            try
+            {
+                var hamsters = await _context.Hamsters.ToListAsync();
+                var five = hamsters.OrderByDescending(u => u.Losses).Take(5);
+                return Ok(five);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error Performing GET in {nameof(GetHamsters)}");
+                return StatusCode(500, Messages.Error500Message);
+            }
+        }
 
         // GET: api/Hamsters/5
         [HttpGet("{id}")]

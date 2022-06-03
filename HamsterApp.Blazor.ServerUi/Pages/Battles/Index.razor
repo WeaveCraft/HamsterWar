@@ -1,7 +1,7 @@
 ﻿@page "/battle/"
 @inject IHamsterService hamsterService
 @inject IJSRuntime jsRuntime
-<h3>Hamster Battle</h3>
+@inject NavigationManager navManager
 
 @if (response.Success == false)
 {
@@ -10,13 +10,7 @@
     </div>
 }
 
-@if (Model == null)
-{
-    <div class="alert alert-info">
-        <h4>@response.Message</h4>
-    </div>
-}
-else
+@if (Model != null)
 {
     <div class="row container pb-3 backgroundWhite">
         <div class="col-12">
@@ -30,7 +24,7 @@ else
                                     <div class="col-8 h5">@hamster.Name</div>
                                     <div class="col-4 text-end"><span class="text-info h4">Age: @hamster.Age</span></div>
                                 </div>
-                                <button @onclick=@(e => { Win1(hamster.Id); Lose2(hamster2.Id); })> <img class="card-img-top img-fluid d-block mx-auto mb-3" src="@hamster.ImgName" alt="@hamster.Name"> </button>
+                                <button @onclick=@(e => { Win1(hamster.Id); Lose2(hamster2.Id); })> <img class="card-img-top img-thumbnail d-block mx-auto mb-3" src="@hamster.ImgName" alt="@hamster.Name"> </button>
                                 <div class="card-body p-1 px-3 row">
                                     <div class="col-6">
                                         <span class="badge p-2 border w-100 text-white bg-info ">Favorite Food: @hamster.FavFood</span>
@@ -54,13 +48,13 @@ else
                                     <div class="col-8 h5">@hamster2.Name</div>
                                     <div class="col-4 text-end"><span class="text-info h4">Age: @hamster2.Age</span></div>
                                 </div>
-                                <button @onclick=@(e => { Win2(hamster2.Id); Lose1(hamster.Id); })> <img class="card-img-top img-fluid d-block mx-auto mb-3" src="@hamster2.ImgName" alt="@hamster2.Name"> </button>
+                                <button @onclick=@(e => { Win2(hamster2.Id); Lose1(hamster.Id); })> <img class="card-img-top img-thumbnail d-block mx-auto mb-3" src="@hamster2.ImgName" alt="@hamster2.Name"> </button>
                                 <div class="card-body p-1 px-3 row">
                                     <div class="col-6">
-                                        <span class="badge p-2 border w-100 text-white bg-info ">Favorite Food: @hamster2.FavFood</span>
+                                        <span class="badge p-2 border w-100 text-white bg-warning ">Favorite Food: @hamster2.FavFood</span>
                                     </div>
                                     <div class="col-6 border-0">
-                                        <span class="badge p-2 border w-100 text-white bg-info ">Loves: @hamster2.Loves</span>
+                                        <span class="badge p-2 border w-100 text-white bg-warning ">Loves: @hamster2.Loves</span>
                                     </div>
 
                                     <div class="col-12 pt-2" style="font-size:13px; text-align:center">
@@ -75,7 +69,21 @@ else
             </div>
         </div>
     </div>
-
+}
+else
+{
+    if (IsLoading)
+    {
+        <p>There Are No Hamsters Willing To Battle.</p>
+    }
+    else
+    {
+        <div class="row my-2 d-flex justify-content-center">
+            <div class="col-lg-8 col-md-6 pb-4 filter">
+                <img class="card-img-top img-fluid d-block my-auto mb-3" src="/images/hamster_loading.gif">
+            </div>
+        </div>
+    }
 }
 
 @code {
@@ -84,8 +92,11 @@ else
     private Response<List<HamsterDetailsDto>> response = new Response<List<HamsterDetailsDto>> { Success = true };
     private Response<List<HamsterDetailsDto>> response2 = new Response<List<HamsterDetailsDto>> { Success = true };
 
+    public bool IsLoading { get; set; } = true;
+
     protected override async Task OnInitializedAsync()
     {
+        IsLoading = false;
         response = await hamsterService.GetOneHamsters();
         do
         {
@@ -107,7 +118,7 @@ else
             var response = await hamsterService.Wins(hamsterId);
             if (response.Success)
             {
-                await jsRuntime.SweetAlertSuccess($"{hamster.Name} is the Cutest");
+                await jsRuntime.ToastrSuccess($"{hamster.Name} +1 Win");
                 await OnInitializedAsync();
             }
         }
@@ -121,7 +132,7 @@ else
             var response = await hamsterService.Wins(hamsterId);
             if (response.Success)
             {
-                await jsRuntime.SweetAlertSuccess($"{hamster.Name} is the Cutest");
+                await jsRuntime.ToastrSuccess($"{hamster.Name} +1 Win");
                 await OnInitializedAsync();
             }
         }
@@ -132,7 +143,7 @@ else
         var response = await hamsterService.Losses(id);
         if (response.Success)
         {
-            await OnInitializedAsync();
+            await jsRuntime.ToastrError($"{hamster.Name} +1 Lose");
         }
     }
     private async Task Lose2(int id)
@@ -141,7 +152,8 @@ else
         var response = await hamsterService.Losses(id);
         if (response.Success)
         {
-            await OnInitializedAsync();
+            await jsRuntime.ToastrError($"{hamster.Name} +1 Lose");
         }
     }
+    private void GoToBattle() => navManager.NavigateTo("/battle/");
     }

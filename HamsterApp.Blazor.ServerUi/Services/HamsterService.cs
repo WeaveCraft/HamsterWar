@@ -199,6 +199,22 @@ namespace HamsterApp.Blazor.ServerUi.Services
             }
             catch (ApiException ex)
             {
+                response = ConvertApiExceptions<int>(ex);
+            }
+            return response;
+        }
+
+        public async Task<Response<int>> CreateMatch(MatchCreateDto match)
+        {
+            Response<int> response = new Response<int> { Success = true };
+
+            try
+            {
+                await GetBearerToken();
+                await _client.MatchesPOSTAsync(match);
+            }
+            catch (ApiException ex)
+            {
 
                 response = ConvertApiExceptions<int>(ex);
             }

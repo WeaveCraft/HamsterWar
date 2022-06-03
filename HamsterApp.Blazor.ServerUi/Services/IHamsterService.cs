@@ -14,5 +14,8 @@ namespace HamsterApp.Blazor.ServerUi.Services
         Task<Response<int>> DeleteHamster(int id);
         Task<Response<int>> Wins(int id);
         Task<Response<int>> Losses(int id);
+
+
+        Task<Response<int>> CreateMatch(MatchCreateDto match);
     }
 }
