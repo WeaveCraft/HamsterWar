@@ -10,13 +10,7 @@
     </div>
 }
 
-@if (Model == null)
-{
-    <div class="alert alert-info">
-        <h4>@response.Message</h4>
-    </div>
-}
-else
+@if (Model != null)
 {
     <a class="btn btn-primary" href="/hamsters/create"><span class="oi oi-plus" aria-hidden="true"></span> Add New Hamster</a>
     <br />
@@ -51,10 +45,26 @@ else
         </tbody>
     </table>
 }
+else
+{
+    if (IsLoading)
+    {
+        <div class="row my-2 d-flex justify-content-center">
+            <div class="col-lg-8 col-md-6 pb-4 filter">
+                <img class="card-img-top img-fluid d-block my-auto mb-3" src="/images/hamsterGallery_loading.gif">
+            </div>
+        </div>
+    }
+    else
+    {
+        <p>There are no hamsters to display.</p>
+    }
+}
 
 @code {
     private List<HamsterReadOnlyDto> Model;
     private Response<List<HamsterReadOnlyDto>> response = new Response<List<HamsterReadOnlyDto>> { Success = true };
+    public bool IsLoading { get; set; } = true;
 
     protected override async Task OnInitializedAsync()
     {
