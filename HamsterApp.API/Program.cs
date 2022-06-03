@@ -1,7 +1,7 @@
 using HamsterApp.API.Configurations;
 using HamsterApp.API.Data;
-using HamsterApp.API.DbInitializer;
 using HamsterApp.API.Repo;
+using HamsterApp.DataAccess.Data;
 using HamsterApp.Entities.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -15,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 var connString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connString));
+builder.Services.AddTransient<IStartupFilter, MigrationStartup<ApplicationDbContext>>();
 
 builder.Services.AddIdentityCore<ApiUser>()
     .AddRoles<IdentityRole>()
