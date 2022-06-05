@@ -62,6 +62,7 @@ Alla API-resurser ska returnera en HTTP statuskod och eventuella data i JSON-for
 något dokument i databasen. GET /hamsters/felaktigt-id
 • 500 (internal server error) - Om ett fel inträffar på servern. Använd try-catch för att fånga det.
 Metod Resurs Body Respons
+
 GET /hamsters - Array med alla hamsterobjekt
 GET /hamsters/random - Ett slumpat hamsterobjekt
 GET /hamsters/id - Hamsterobjekt med ett specifikt id. 404
@@ -112,7 +113,8 @@ hamster som vunnit någon match.
 GET /winners - En array av hamsterobjekt för de 5 som
 vunnit flest matcher
 GET /losers - En array av hamsterobjekt för de 5 som
-förlorat flest matcher
+förlorat flest matcher.
+
 
 Level ups
 Resurser som är bra träning, men inte nödvändiga för högsta betyg.
