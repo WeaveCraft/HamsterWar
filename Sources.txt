@@ -6,8 +6,6 @@ https://sweetalert2.github.io/ -> for update notifications for front-end
 https://bootswatch.com/ -> for front-end UI using bootstrap. 
 CSS code can be found under HamsterApp.Blazor.ServerUI/wwwroot/css/bootswatch_cyborg.css
 
-TODO - Fix hamster details on gallery, clean code on /battle (index)
-
 Login User Information
 Admin has all access.
 Username: Admin@hamsters.com
@@ -16,5 +14,3 @@ Password: Admin123!
 User does not have access for edit, delete and create.
 Username: User@hamsters.se
 Password: User123!
-
-TODO: Validation for /hamsters CRUD

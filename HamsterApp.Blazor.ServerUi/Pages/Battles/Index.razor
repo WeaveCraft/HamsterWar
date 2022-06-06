@@ -24,7 +24,7 @@
                                     <div class="col-8 h5">@hamster.Name</div>
                                     <div class="col-4 text-end"><span class="text-info h4">Age: @hamster.Age</span></div>
                                 </div>
-                                <button @onclick=@(e => { Win1(hamster.Id); Lose2(hamster2.Id); })> <img class="card-img-top img-thumbnail d-block mx-auto mb-3" src="@hamster.ImgName" alt="@hamster.Name"> </button>
+                                 <img class="card-img-top img-thumbnail d-block mx-auto mb-3" src="@hamster.ImgName" alt="@hamster.Name" @onclick=@(e => { Win1(hamster.Id); Lose2(hamster2.Id); })>
                                 <div class="card-body p-1 px-3 row">
                                     <div class="col-6">
                                         <span class="badge p-2 border w-100 text-white bg-info ">Favorite Food: @hamster.FavFood</span>
@@ -48,7 +48,7 @@
                                     <div class="col-8 h5">@hamster2.Name</div>
                                     <div class="col-4 text-end"><span class="text-info h4">Age: @hamster2.Age</span></div>
                                 </div>
-                                <button @onclick=@(e => { Win2(hamster2.Id); Lose1(hamster.Id); })> <img class="card-img-top img-thumbnail d-block mx-auto mb-3" src="@hamster2.ImgName" alt="@hamster2.Name"> </button>
+                                 <img class="card-img-top img-thumbnail d-block mx-auto mb-3" src="@hamster2.ImgName" alt="@hamster2.Name" @onclick=@(e => { Win2(hamster2.Id); Lose1(hamster.Id); })>
                                 <div class="card-body p-1 px-3 row">
                                     <div class="col-6">
                                         <span class="badge p-2 border w-100 text-white bg-warning ">Favorite Food: @hamster2.FavFood</span>

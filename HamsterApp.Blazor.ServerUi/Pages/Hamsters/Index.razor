@@ -1,6 +1,7 @@
 ﻿@page "/hamsters/"
 @inject IHamsterService hamsterService
 @inject IJSRuntime jsRuntime
+@inject NavigationManager navManager
 <h3>Hamster Gallery</h3>
 
 @if (response.Success == false)
@@ -10,40 +11,39 @@
     </div>
 }
 
-@if (Model != null)
+@if (Model! != null)
 {
     <a class="btn btn-primary" href="/hamsters/create"><span class="oi oi-plus" aria-hidden="true"></span> Add New Hamster</a>
-    <br />
-    <table class="table table-responsive">
-        <thead>
-            <tr>
-                <th>Name: </th>
-                <th>Age: </th>
-                <th>Wins: </th>
-                <th>Losses: </th>
-                <th>Action: </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var hamster in Model)
-            {
-                <tr>
-                    <td>@hamster.Name</td>
-                    <td>@hamster.Age</td>
-                    <td>@hamster.Wins</td>
-                    <td>@hamster.Losses</td>
-                    <td>
-                        <a class="btn btn-primary" href="/hamsters/detail/@hamster.Id"><span class="oi oi-bell" aria-hidden="true"></span>Details</a>
-                        <a class="btn btn-warning" href="/hamsters/update/@hamster.Id"><span class="oi oi-pencil" aria-hidden="true"></span>Edit</a>
-                        <button class="btn btn-danger" @onclick=@(() => Delete(@hamster.Id))><span class="oi oi-delete" aria-hidden="true"></span>Delete</button>
-                    </td>
-                    <td class="col-md-2">
-                        <img src="@hamster.ImgName" class="w-100" />
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+
+    <div class="row container pb-3 backgroundWhite">
+        <div class="col-12">
+            <div class="row my-2 d-flex justify-content-center">
+                @foreach (var hamster in Model)
+                {
+                    <div class="col-lg-4 col-md-6 pb-4 filter">
+                        <div class="card bg-white rounded shadow-sm" style="border:1px solid #222">
+                            <div class="card-body pb-1 row">
+                                <div class="col-8 h5">@hamster.Name</div>
+                                <div class="col-4 text-end"><span class="text-info h4">Age: @hamster.Age</span></div>
+                            </div>
+                            <img class="card-img-top img-thumbnail d-block mx-auto mb-3" src="@hamster.ImgName" alt="@hamster.Name">
+                            <div class="card-body p-1 px-3 row">
+                                <div class="col-12 pt-2" style="font-size:13px; text-align:center">
+                                    <button class="btn btn-danger" @onclick=@(() => Delete(@hamster.Id))><span class="oi oi-trash" aria-hidden="true"></span>Delete</button>
+                                </div>
+                                <div class="col-12 pt-2" style="font-size:13px; text-align:center">
+                                    <a class="btn btn-warning" href="/hamsters/detail/@hamster.Id"><span class="oi oi-pencil" aria-hidden="true"></span>Details about @hamster.Name</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
 }
 else
 {
@@ -60,6 +60,8 @@ else
         <p>There are no hamsters to display.</p>
     }
 }
+}
+
 
 @code {
     private List<HamsterReadOnlyDto> Model;
@@ -84,9 +86,10 @@ else
             var response = await hamsterService.DeleteHamster(hamsterId);
             if (response.Success)
             {
-                await jsRuntime.SweetAlertSuccess("Hamster Deleted");
+                await jsRuntime.SweetAlertSuccess($"{hamster.Name} Deleted");
                 await OnInitializedAsync();
             }
         }
     }
+
 }

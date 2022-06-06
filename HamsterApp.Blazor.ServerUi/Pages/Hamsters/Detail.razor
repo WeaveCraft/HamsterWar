@@ -29,6 +29,24 @@
             <ValidationMessage For="@(() => Hamster.Loves)" />
         </div>
         <br />
+        <div class="form-group col-6">
+            <label for="favfood">Wins</label>
+            <InputNumber @bind-Value="Hamster.Wins" class="form-control" id="favfood" />
+            <ValidationMessage For="@(() => Hamster.Wins)" />
+        </div>
+        <br />
+        <div class="form-group col-6">
+            <label for="favfood">Losses</label>
+            <InputNumber @bind-Value="Hamster.Losses" class="form-control" id="favfood" />
+            <ValidationMessage For="@(() => Hamster.Losses)" />
+        </div>
+        <br />
+        <div class="form-group col-6">
+            <label for="favfood">Games</label>
+            <InputNumber @bind-Value="Hamster.Games" class="form-control" id="favfood" />
+            <ValidationMessage For="@(() => Hamster.Games)" />
+        </div>
+        <br />
         <br />
         <div class="col-md-2">
             <img src="@Hamster.ImgName" class="w-100" />

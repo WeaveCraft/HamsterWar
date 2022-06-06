@@ -30,7 +30,7 @@ namespace HamsterApp.Blazor.ServerUi.LoadImage
             if (!Directory.Exists(folderDirectory)) //if images folder does not exist we will create it.
             {
                 Directory.CreateDirectory(folderDirectory);
-            } //And then we want to create our files.
+            } //And then we want to create our files. The uploaded image gets created within the /images folder.
             var filePath = Path.Combine(folderDirectory, fileName);
 
             await using FileStream fs = new FileStream(filePath, FileMode.Create);

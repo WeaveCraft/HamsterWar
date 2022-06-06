@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamsterApp.Entities", "Hams
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamsterApp.Blazor.ServerUi", "HamsterApp.Blazor.ServerUi\HamsterApp.Blazor.ServerUi.csproj", "{DD2F3797-4248-408A-8AF4-1B9B54375CBD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{E11DE18E-C223-4599-B473-D846CB6A5FB7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GoodToKnow", "GoodToKnow", "{E11DE18E-C223-4599-B473-D846CB6A5FB7}"
 	ProjectSection(SolutionItems) = preProject
 		Sources.txt = Sources.txt
 	EndProjectSection

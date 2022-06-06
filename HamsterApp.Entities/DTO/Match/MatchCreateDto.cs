@@ -6,7 +6,7 @@ namespace HamsterApp.Entities.DTO.Match
     {
         [Required]
         public int HamsterId { get; set; }
-        public int WinId { get; set; }
-        public int LoseId { get; set; }
+        //public int WinId { get; set; }
+        //public int LoseId { get; set; }
     }
 }
