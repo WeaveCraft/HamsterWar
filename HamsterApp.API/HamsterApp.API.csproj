@@ -32,4 +32,8 @@
     <ProjectReference Include="..\HamsterApp.DataAccess\HamsterApp.DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="logs\" />
+  </ItemGroup>
+
 </Project>
