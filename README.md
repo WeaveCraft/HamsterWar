@@ -32,6 +32,7 @@ i hur olika företag arbetar med teknikerna.
 Del 1: Hamster Wars Backend
 
 Specifikation
+
 Godkänt-nivå
 Projektdagbok
 En projektdagbok skall föras, där du skriver några rader varje dag om vad du har gjort. Eventuella problem
