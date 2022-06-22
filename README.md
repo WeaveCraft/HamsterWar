@@ -24,7 +24,6 @@ Efter projektet ska du:
 7. Förstå HTTP statuskoder
 
 
-
 Detta är för att du ska kunna arbeta med modern utveckling efter utbildningen, och snabbt kunna sätta dig in
 i hur olika företag arbetar med teknikerna.
 
