@@ -23,7 +23,6 @@ Efter projektet ska du:
 6. Förstå hur man använder Git för att versionshantera ett projekt
 7. Förstå HTTP statuskoder
 
-
 Detta är för att du ska kunna arbeta med modern utveckling efter utbildningen, och snabbt kunna sätta dig in
 i hur olika företag arbetar med teknikerna.
 
