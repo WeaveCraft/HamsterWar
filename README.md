@@ -2,7 +2,6 @@
 
 School Project REST API with Blazor Web.
 
-
 Bakgrund
 
 Din uppgift är att bygga en fullstack lösning för kommande virala sensationen, webbplatsen HAMSTERWARS.
