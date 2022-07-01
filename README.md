@@ -9,7 +9,7 @@ Uppgiften är uppdelad i två delar: backend och frontend. Del 1 handlar om att 
 bygga en frontend till API:et med Blazor Web Assembly. Båda delarna skall publiceras online på Microsoft
 Azure.
 
-Mål med uppgiften
+Mål med uppgiften.
 
 Efter projektet ska du:
 1. Kunna effektivt skapa webbappar med Blazor
