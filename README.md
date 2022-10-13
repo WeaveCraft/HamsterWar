@@ -123,3 +123,15 @@ Arrayen ska ha minst ett element.
 Arrayen ska ha minst ett element.
 5. Implementera en komplett Onion Architecture för din lösning, med designmönster som Repository,
 Services osv. Använd gärna strukturen i boken Ultimate ASP.NET Core Web API som förlaga.
+
+![Screenshot 2022-10-13 221046](https://user-images.githubusercontent.com/90194213/195699836-ff0ce45e-4bc9-42dd-9afd-dfb438d10271.png)
+![Screenshot 2022-10-13 221056](https://user-images.githubusercontent.com/90194213/195699842-77bda1da-b4e1-4ec4-9e6c-2e9d8bd2f0e3.png)
+![Screenshot 2022-10-13 221107](https://user-images.githubusercontent.com/90194213/195699844-275bf8a3-cc81-4cdc-9689-3b65f0fdd833.png)
+![Screenshot 2022-10-13 221124](https://user-images.githubusercontent.com/90194213/195699847-542d0c60-f58a-4d03-96bb-a434ca555ed3.png)
+![Screenshot 2022-10-13 221135](https://user-images.githubusercontent.com/90194213/195699849-938cb76b-2572-4e6d-9c0a-dce8510944d0.png)
+![Screenshot 2022-10-13 221202](https://user-images.githubusercontent.com/90194213/195699850-9425df6c-8c8b-49d0-9a42-7024640e6cce.png)
+![Screenshot 2022-10-13 220847](https://user-images.githubusercontent.com/90194213/195699853-912ef234-4fea-4113-803c-1128a1bbcb6c.png)
+![Screenshot 2022-10-13 220946](https://user-images.githubusercontent.com/90194213/195699855-59b1c4cf-d2bb-481c-9a6c-c79eeb2dd39b.png)
+![Screenshot 2022-10-13 220956](https://user-images.githubusercontent.com/90194213/195699857-66a3240b-d798-45c3-b0b2-a957537f36a5.png)
+![Screenshot 2022-10-13 221022](https://user-images.githubusercontent.com/90194213/195699859-89adedbd-2cca-47b5-b9ba-d65a5dcc4022.png)
+![Screenshot 2022-10-13 221034](https://user-images.githubusercontent.com/90194213/195699863-a525779f-cc71-40f8-8d47-a90a4df18856.png)
